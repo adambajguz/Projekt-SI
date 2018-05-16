@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{polski}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\bibliographystyle{unsrt}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=10cm]{media/PB_logo}\par\vspace{1cm}
+	{\LARGE\bfseries Sztuczna inteligencja \par}
+	\vspace{0.5cm}
+	
+	{\LARGE\bfseries Sprawozdanie z projektu końcowego\par}
+	\vspace{1.5cm}
+	
+	{\Large Temat: Prezentacja możliwości biblioteki scikit-learn w projektach informatycznych, wymagających użycia drzew decyzyjnych.\par}
+	\vspace{3cm}
+	
+	\raggedright
+	
+	
+ 	{\large Wykonujący projekt: \textbf{Adam Bajguz}\\
+ 			\makebox[0pt][l]{}\phantom{Wykonujący projekt: }\textbf{Magdalena Kalisz}\par}
+ 	\vspace{1cm}
+ 	
+ 	{\large Studia dzienne \par
+	Kierunek: Informatyka \par
+	Semestr: IV \hspace{2.5cm} Grupa zajęciowa: \textbf{PS1} \par
+	Prowadzący ćwiczenie: \textbf{mgr inż. Dariusz Jankowski} \par}
+ 	
+	\vfill
+		
+	\begin{tabular}{c}
+	\today\\
+	Data wykonania projektu
+	\end{tabular}
+	
+	\begin{flushright}
+	\begin{tabular}{c}
+	..............................................\\
+	Data i podpis prowadzącego
+	\end{tabular}
+	\end{flushright}
+
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+rtt r  tt\cite{test} t t t
+\section{Idea drzew decyzji}
+\subsection{Budowa drzew decyzyjnych}
+\subsection{Cechy drzew decyzyjnych}
+\subsection{Drzewa klasyfikacyjne i regresyjne}
+\subsection{Drzewa decyzyjne w teorii decyzji}
+\subsection{Drzewa decyzyjne w typowych zastosowaniach CI: klasyfikacja danych i maszynowym uczeniu się}
+
+\subsection{Metody poprawy wyników uzyskiwanych dzięki drzewom decyzyjnym}
+\subsection{Przycinanie drzew decyzyjne}
+\subsection{Inne metody poprawy wyników}
+
+\section{Algorytmy budowania drzew decyzyjnych}
+\subsection{Algorytm ID3}
+\subsection{Algorytm C4.5}
+\subsection{Algorytm C5.0}
+\subsection{Algorytm CART}
+\subsection{Algorytmy ewolucyjne}
+
+\section{Funkcje podziału}
+\subsection{GINI}
+\subsection{Information gain}
+\subsection{Gain ratio}
+\subsection{Random}
+
+\section{Biblioteka scikit-learn}
+
+\section{Opis programu}
+
+\section{Wnioski}
+
+\section{Omówienie literatury i bieżącego stanu wiedzy w wybranej dziedzinie SI}
+
+\section{Omówienie wykorzystanej biblioteki i ewentualnych modyfikacji kodu źródłowego}
+
+\section{Opisanie danych wykorzystanych do testowania działania metody wybranej biblioteki}
+
+\section{Omówienie głównych części programu/skryptu i wyników}
+
+\section{Wnioski końcowe odnośnie biblioteki i projektu}
+
+\addcontentsline{toc}{section}{Literatura}
+\bibliography{Projekt}
+
+\end{document}
