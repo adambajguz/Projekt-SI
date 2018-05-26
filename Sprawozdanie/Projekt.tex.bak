@@ -5,7 +5,13 @@
 \usepackage{polski}
 \usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
-\bibliographystyle{unsrt}
+\usepackage{booktabs}
+
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true}
+
+\bibliographystyle{elsarticle-num}
 
 \begin{document}
 \begin{titlepage}
@@ -52,30 +58,151 @@
 \newpage
 
 \section{Wstęp}
-rtt r  tt\cite{test} t t t
+Drzewa decyzyjne to nieparametryczna nadzorowana metoda uczenia, która może być stosowana zarówno do klasyfikacji, jak i regresji. Drzewa decyzyjne są jednym z najczęściej stosowanych narzędzi używanych do klasyfikacji i prognozowania, ponieważ wiedza odkryta przez drzewo decyzyjne jest zilustrowana w hierarchicznej strukturze. Drzewa decyzyjne kodują zestaw reguł if-else, które mogą być używane do przewidywania zmiennej docelowej danych funkcji danych. Reguły if-else są tworzone przy użyciu zestawu danych treningowych w celu zaspokojenia jak największej liczby instancji danych treningowych \cite{MazumdarWWW, Quinlan1986}.Pierwszy artykuł, który przedstawia podejście do klasyfikacji znane z drzew decyzyjn, pochodzi z 1959 roku \cite{Belson1959}. Z kolei pierwszy algorytm drzew regresyjnych został obublikowany w roku 1963 \cite{Morgan1963}
+
+
+
+Drzewa decyzyjne to również graficzny sposób wspierania procesu decyzyjnego. Drzewo stosowane jest w teorii decyzji i ma sporo zastosowań. Może zarówno rozwiązać problem decyzyjny, jak i stworzyć plan. Metoda drzew decyzyjnych sprawdza się przede wszystkim, kiedy mamy problemy decyzyjne z wieloma rozgałęziającymi się wariantami oraz kiedy podejmujemy decyzję w warunkach ryzyka. Drzewa znalazły zastosowanie w takich dziedzinach jak botanika i medycyna. Coraz częściej sięga się do nich także w ekonomii, gdyż są w stanie ułatwiać i usprawniać komputerowe wspomaganie procesu podejmowania decyzji. Technika drzew decyzyjnych, czy też klasyfikacyjnych, jak niektórzy je nazywają, pozwala na: wyznaczenie zasad decyzyjnych opisujących reguły przypisywania obiektów do wyróżnionych klas (zasady odwołują się do wartości atrybutów opisujących obiekty) analizowanie zbioru obiektów opisywanych przez przyjęty zestaw atrybutów; celem analizy jest doskonalenie podziału obiektów na jednorodne klasy; metoda dokonywania podziału ma charakter hierarchiczny. Punktem wyjścia jest zbiór zawierający wszystkie analizowane obiekty; w trakcie analizy jest dzielony na określoną liczbę podzbiorów. W kolejnych krokach każdy z podzbiorów podlega dalszemu podziałowi; na końcu analizy każdy obiekt stanowi oddzielną klasę \cite{Breiman1984, Gatnar1998, Morgan1963, Quinlan1990}.
+
+\subsection{Zalety i wady drzew decyzyjnych}
+
+
+
 \section{Idea drzew decyzji}
-\subsection{Budowa drzew decyzyjnych}
-\subsection{Cechy drzew decyzyjnych}
+Idea drzew opiera się na rekursywnym podziale danych na coraz to mniejsze sterty w celu jak najlepszego dopasowania. Początkowo próbka (węzeł macierzysty, korzeń) dzielona jest na dwa lub więcej podzbiorów (węzły potomne). Natomiast węzeł optymalny wyszukuje się na podstawie wszystkich punktów węzłowych dla każdej zmiennej. Następnie proces jest powtarzany dla każdego węzła potomnego, a te podczas dzielenia traktowane są jak węzły macierzyste. Węzeł, którego nie można już podzielić nazywamy liściem, bądź węzłem końcowym, a liczbę liści - wielkością drzewa
+
 \subsection{Drzewa klasyfikacyjne i regresyjne}
+Do rozwiązywania problemów zarówno regresyjnych, jaki i klasyfikacyjnych służy metoda CART (ang. Classification and Regression Trees). Metoda ta powstała w roku 1984. Opiera się na dwóch typach drzew:
+Drzewa klasyfikacyjne - służą porządkowaniu klas, charakteryzuje je kategoryczna zmienna docelowa;
+ 
+
+ 
+
+
+Rysunek 1: Idea drzew klasyfikacyjnych
+Drzewa regresyjne - służą do przewidywania wartości zmiennej docelowej, charakteryzuje je zmienna docelowa typu ciągłego.
+ 
+
+
+Rysunek 2: Idea drzew regresyjnych
+[http://www.statystyka.az.pl/analiza-skupien/metoda-cart.php]
+
 \subsection{Drzewa decyzyjne w teorii decyzji}
 \subsection{Drzewa decyzyjne w typowych zastosowaniach CI: klasyfikacja danych i maszynowym uczeniu się}
+\subsection{Budowa drzew decyzyjnych}
+Drzewem decyzyjnym jest graf-drzewo, które składa się z korzenia, węzłów, krawędzi oraz liści. Liście to węzły, z których nie wychodzą już żadne krawędzie. Korzeń drzewa tworzony jest przez wybrany atrybut, natomiast poszczególne gałęzie reprezentują wartości tego atrybutu. Dzięki drzewu decyzyjnemu, zbudowanemu na podstawie danych empirycznych, można sklasyfikować nowe obiekty, które nie brały udziału w procesie tworzenia drzewa. Drzewa decyzyjne charakteryzują się strukturą hierarchiczną. Znaczy to, że w kolejnych krokach dzieli się zbiór obiektów, poprzez odpowiedzi na pytania o wartości wybranych cech lub ich kombinacji liniowych. Ostateczna decyzja zależy od odpowiedzi na wszystkie pytania. W algorytmach konstrukcji drzew jednym z kluczowych elementów jest wybór kolejności cech, według których, na poszczególnych etapach, będzie dokonywany podział zbioru obiektów. Technika drzew decyzyjnych to uzupełnienie metod klasycznych. Przykładem może tu być analiza dyskryminacyjna. Hierarchiczność podejmowania decyzji jest cechą, która wyróżnia drzewo decyzyjne od innych metod.
 
+
+Drzewo decyzyjne buduje modele klasyfikacji lub regresji w postaci struktury drzewa. Rozkłada zbiór danych na mniejsze i mniejsze podzbiory, a jednocześnie rozwija się przyrostowo powiązane drzewo decyzyjne. Końcowym wynikiem jest drzewo z węzłami decyzyjnymi i węzłami liści. Węzeł decyzyjny (np. Outlook) ma dwie lub więcej gałęzi (np. Sunny, Overcast i Rainy). Węzeł liści (np. Play) reprezentuje klasyfikację lub decyzję. Najwyższy węzeł decyzyjny w drzewie, który odpowiada najlepszemu predykatorowi zwanemu węzłem głównym. Drzewa decyzyjne mogą obsługiwać zarówno dane kategoryczne, jak i liczbowe. [http://www.saedsayad.com/decision_tree.htm]
+
+
+\subsection{Cechy drzew decyzyjnych}
+Drzewa decyzyjne i uczenie się drzewa decyzyjnego razem stanowią prosty i szybki sposób uczenia się funkcji, która mapuje dane x na wyniki y, gdzie x może być mieszanką zmiennych jakościowych i liczbowych, a y może być kategoryczne dla klasyfikacji lub numeryczne dla regresji \cite{Breiman1984, Lan2017}.
+
+Zaletą drzew decyzyjnych jest to, że mogą modelować dowolny typ funkcji do klasyfikacji lub regresji, czego inne techniki nie potrafią. Ale drzewo decyzyjne jest bardzo podatne na przeuczenie i nastawienie na dane szkoleniowe. Tak więc drzewa decyzyjne są używane w przypadku bardzo dużych zbiorów danych, które są uważane za dobrze reprezentujące gruntową prawdę. Dodatkowo, niektóre algorytmy przycinania drzew są również używane do rozwiązania problemu przeuczenia \cite{Breiman1984, MazumdarWWW}.
+
+Znacznie szybsze trenowanie w porównaniu z prostymi sieciami neuronowymi przy porównywalnej wydajności (złożoność czasowa drzew decyzyjnych jest funkcją zależną od liczby cech oraz wierszy w zestawie danych, podczas gdy dla sieci neuronowych jest funkcją zależną od liczby cech, wierszy w zestawie danych, warstw ukrytych oraz węzłów w każdej ukrytej warstwie) \cite{Breiman1984, Lan2017}
+
+Łatwo interpretowalne, odpowiednie do wyboru zmiennych - Ponadto jedną z największych zalet korzystania z drzew decyzyjnych i losowych lasów jest łatwość, dzięki której możemy zobaczyć, jakie cechy lub zmienne przyczyniają się do klasyfikacji lub regresji oraz ich względne znaczenie w oparciu o ich położenie w drzewie \cite{Breiman1984, Lan2017}.
 \subsection{Metody poprawy wyników uzyskiwanych dzięki drzewom decyzyjnym}
 \subsection{Przycinanie drzew decyzyjne}
 \subsection{Inne metody poprawy wyników}
 
-\section{Algorytmy budowania drzew decyzyjnych}
-\subsection{Algorytm ID3}
-\subsection{Algorytm C4.5}
-\subsection{Algorytm C5.0}
-\subsection{Algorytm CART}
-\subsection{Algorytmy ewolucyjne}
+
+\section{Entropia}
+Drzewo decyzyjne jest budowane odgórnie z węzła głównego i polega na dzieleniu danych na podzbiory zawierające instancje o podobnych wartościach (jednorodne). Algorytm ID3 wykorzystuje entropię do obliczenia homogeniczności próbki. Jeśli próbka jest całkowicie jednorodna, entropia wynosi zero, a jeśli próbka jest równo podzielona, ma entropię jednego.
+
 
 \section{Funkcje podziału}
 \subsection{GINI}
 \subsection{Information gain}
 \subsection{Gain ratio}
 \subsection{Random}
+
+
+\section{Algorytmy budowania drzew decyzyjnych}
+Dostępnych jest kilka algorytmów służących do klasyfikacji i analizy segmentacji. Wszystkie te algorytmy zasadniczo realizują to samo zadanie: dzieląc dane na kolejne podgrupy, analizują wszystkie zmienne w zbiorze danych, by znaleźć zmienną zapewniającą najlepszą klasyfikację lub predykcję. Proces jest rekursywny, a grupy są dzielone na coraz mniejsze jednostki aż do ukończenia drzewa (zgodnie z określonym kryterium zatrzymania). Zmienne przewidywane i wejściowe używane do budowania drzewa mogą być ilościowe (przedział liczbowy) lub jakościowe, w zależności od algorytmu. Jeśli zmienna przewidywana jest ilościowa, generowane jest drzewo regresji; jeśli zmienna przewidywana jest jakościowa, generowane jest drzewo klasyfikacji.
+
+
+Przegląd istniejącej literatury pokazuje, że do najczęściej stosowanych algorytmów drzewa decyzyjnego należą algorytm Iterative Dichotomiser 3 (ID3), algorytm C4.5, algorytm automatycznego detektora interaktywnego Chi-kwadrat (CHAID) oraz drzewo klasyfikacji i regresji (CART ) algorytm. Wśród tych algorytmów są pewne różnice, z których jedną jest możliwość modelowania różnych typów danych. Ponieważ zestaw danych może być skonstruowany na podstawie różnych typów danych, np. Danych kategorycznych, danych liczbowych lub kombinacji obu, istnieje potrzeba użycia odpowiedniego algorytmu drzewa decyzyjnego, który może obsługiwać określony typ danych wykorzystywanych w zestawie danych. Wszystkie wyżej wymienione algorytmy mogą wspierać modelowanie danych jakościowych, podczas gdy tylko algorytm C4.5 i algorytm CART mogą być używane do modelowania danych liczbowych (patrz tabela 1). Różnica ta może być również wykorzystana jako wytyczna dla wyboru odpowiedniego algorytmu drzewa decyzyjnego. Inną różnicą między tymi algorytmami jest proces opracowywania modeli, szczególnie na etapie sadzenia drzew i przycinania drzew. Pod względem tego pierwszego algorytmy ID3 i C4.5 dzielą model drzewa na tak wiele potrzebnych operacji, podczas gdy algorytm CART może obsługiwać jedynie binarne podziały. Jeśli chodzi o te ostatnie, mechanizmy przycinania zlokalizowane w algorytmach C4.5 i CART wspierają usuwanie nieistotnych węzłów i rozgałęzień, ale algorytm CHAID utrudnia proces wzrostu drzewek przed nadużywaniem danych szkoleniowych (Tabela 1).
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Decision tree algorithms} & \textbf{Data types}    & \textbf{Numerical data splitting method} \\ \midrule
+CHAID (Kass, 1980)                & Categorical            & N/A                                      \\ \midrule
+ID3 (Quinlan, 1986)               & Categorical            & No restrictions                          \\ \midrule
+C4.5 (Quinlan, 1993)              & Categorical, numerical & No restrictions                          \\ \midrule
+C5.0 			                  & Categorical, numerical & No restrictions                          \\ \midrule
+CART (Breiman et al., 1984)       & Categorical, numerical & Binary splits                            \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Algorytm CHAID}
+CHAID to algorytm do uczenia drzew decyzyjnych zaproponowany przez Kassa (1980). Działa podobnie do CART w tym sensie, że oba mogą być używane zarówno do klasyfikacji, jak i regresji. Ale w przeciwieństwie do CART, CHAID wewnętrznie obsługuje tylko kategoryczne funkcje. Funkcje ciągłe są najpierw konwertowane na porządkowe cechy kategoryczne algorytmu CHAID, aby móc z nich korzystać. Konwersja odbywa się poprzez binowanie wartości funkcji. Liczba pojemników (K) musi być dostarczona przez użytkownika. Biorąc pod uwagę K, predykator jest podzielony w taki sposób, że wszystkie pojemniki mają taką samą liczbę (mniej więcej) różnych wartości predykcyjnych. Maksymalna wartość funkcji w każdym pojemniku jest używana jako punkt przerwania.
+
+Ważnym parametrem w procesie wzrostu drzewa CHAID jest wartość p. Wartość p jest miarą używaną do decydowania o tym, które kategorie wartości predykcyjnych mają się łączyć podczas łączenia, a także do decydowania o najlepszym atrybucie podczas dzielenia. Wartość p jest obliczana przy użyciu różnych metod testowania hipotez w zależności od rodzaju zmiennej zależnej (nominalnej, porządkowej lub ciągłej). Bardziej szczegółową dyskusję na temat algorytmu CHAID można znaleźć w dokumentacji klasy CCHAIDTree w Shogun. Przejdźmy do bardziej interesującego tematu, który uczy się używać CHAID przy użyciu API python Shoguna.
+
+[http://www.shogun-toolbox.org/static/notebook/current/DecisionTrees.html]
+
+\subsection{Algorytm ID3}
+ID3 jest prostym algorytmem uczenia drzewa decyzyjnego opracowanym przez Rossa Quinlana. ID3 ma zastosowanie tylko w przypadkach, w których atrybuty (lub cechy) definiujące przykłady danych mają charakter kategoryczny, a przykłady danych należą do wcześniej zdefiniowanych, wyraźnie odróżnialnych (tj. Dobrze zdefiniowanych) klas. ID3 to iteracyjny chciwy algorytm, który rozpoczyna się od węzła głównego i ostatecznie buduje całe drzewo. W każdym węźle wybiera się "najlepszy" atrybut do klasyfikacji danych. Atrybut "najlepszy" jest wybierany przy użyciu metryki przyrostu informacji. Po wybraniu atrybutu w węźle, przykłady danych w węźle są podzielone na podgrupy na podstawie wartości atrybutów, które mają. Zasadniczo wszystkie przykłady danych o tej samej wartości atrybutu są umieszczane w tej samej podgrupie. Te podgrupy tworzą dzieci obecnego węzła, a algorytm jest powtarzany dla każdego z nowoutworzonych węzłów potomnych. To trwa dopóki wszystkie elementy danych węzła nie należą do tej samej klasy lub wszystkie atrybuty zostaną wyczerpane. W tym ostatnim przypadku przewidywana klasa może być błędna i ogólnie tryb klas pojawiających się w węźle jest wybierany jako klasa predykcyjna
+[http://www.shogun-toolbox.org/static/notebook/current/DecisionTrees.html]
+
+\subsection{Algorytm C4.5}
+Algorytm C4.5 jest zasadniczo rozszerzeniem algorytmu ID3 do uczenia drzewa decyzyjnego. Ma dodatkową możliwość obsługi ciągłych atrybutów i atrybutów z brakującymi wartościami. Proces uprawy drzew w przypadku C4.5 jest taki sam jak w przypadku ID3, to jest znajdowanie najlepszego podziału w każdym węźle przy użyciu metryki przyrostu informacji. Jednak w przypadku atrybutu ciągłego algorytm C4.5 musi wykonać dodatkowy krok przekształcania go w dwuwartościowy atrybut kategoryczny, dzieląc około odpowiedniego progu. Ten próg jest wybierany w taki sposób, że wynikowy podział daje maksymalne wzmocnienie informacji. Rozpocznijmy odkrywanie algorytmu algorytmu Shoguna C4.5 za pomocą zabawkowego przykładu.
+[http://www.shogun-toolbox.org/static/notebook/current/DecisionTrees.html]
+
+
+\subsection{Algorytm C5.0}
+C5.0 to najnowsza wersja Quinlana na podstawie licencji firmowej. Wykorzystuje mniej pamięci i buduje mniejsze zestawy reguł niż C4.5, a jednocześnie jest bardziej dokładny.
+
+[http://scikit-learn.org/stable/modules/tree.html#tree-algorithms-id3-c4-5-c5-0-and-cart]
+
+\subsection{Algorytm CART}
+Klasyfikacja i regresja Drzewa lub CART w skrócie to akronim wprowadzony przez Leo Breimana w celu odnoszenia się do algorytmów Drzewo decyzyjne, które można wykorzystać do klasyfikacji lub modelowania predykcyjnego problemów z modelowaniem.
+
+Skupimy się na użyciu CART do klasyfikacji w tym samouczku.
+
+Reprezentacja modelu CART jest drzewem binarnym. To jest to samo binarne drzewo z algorytmów i struktur danych, nic nadzwyczajnego (każdy węzeł może mieć zero, jeden lub dwa węzły potomne).
+
+Węzeł reprezentuje pojedynczą zmienną wejściową (X) i punkt podziału na tej zmiennej, zakładając, że zmienna jest wartością numeryczną. Węzły liści (zwane również węzłami końcowymi) drzewa zawierają zmienną wyjściową (y), która służy do prognozowania.
+
+Po utworzeniu drzewa można nawigować za pomocą nowego wiersza danych następujących po każdym oddziale z podziałem aż do ostatecznej prognozy.
+
+Tworzenie binarnego drzewa decyzyjnego jest w rzeczywistości procesem dzielenia przestrzeni wejściowej. Chciwe podejście jest używane do dzielenia przestrzeni zwanej rekurencyjnym rozdzielaniem binarnym. Jest to procedura numeryczna, w której wszystkie wartości są wyrównane, a różne punkty podziału są testowane i testowane za pomocą funkcji kosztów.
+
+Dokonano podziału z najlepszym kosztem (najniższy koszt, ponieważ minimalizujemy koszty). Wszystkie zmienne wejściowe i wszystkie możliwe punkty podziału są oceniane i wybierane chciwie w oparciu o funkcję kosztów.
+
+Regresja: funkcja kosztu, która jest zminimalizowana, aby wybrać punkty podziału, jest sumą kwadratów błędów we wszystkich próbkach treningowych, które mieszczą się w prostokącie.
+Klasyfikacja: Używana jest funkcja kosztu Gini, która zapewnia wskazanie, jak czyste są węzły, gdzie czystość węzła odnosi się do mieszanych danych treningowych przypisanych do każdego węzła.
+Dzielenie jest kontynuowane, dopóki węzły nie zawierają minimalnej liczby przykładów treningu lub osiągnięta zostanie maksymalna głębokość drzewa \cite{Brownlee2017}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Algorytm CART jest popularnym algorytmem uczenia drzewek decyzyjnych wprowadzonym przez Breimana i in. W odróżnieniu od ID3 i C4.5, drzewo uczenia się w tym przypadku może być używane zarówno do klasyfikacji wieloklasowej, jak i do regresji w zależności od rodzaju zmiennej zależnej. Proces uprawy drzew składa się z rekurencyjnego dwójkowego podziału węzłów. Aby znaleźć najlepszy podział w każdym węźle, rozważane są wszystkie możliwe podziały wszystkich dostępnych atrybutów predykcyjnych. Najlepszy podział to taki, który maksymalizuje pewne kryterium podziału. Do zadań klasyfikacyjnych, tj. gdy atrybut zależny jest kategoryczny, jako kryterium podziału stosuje się indeks Giniego. Do zadań regresyjnych, tj. gdy zmienna zależna jest ciągła, stosowane jest odchylenie najmniejszych kwadratów. Daj nam poznać implementację Shogun's CART, pracując nad dwoma problemami z zabawkami, jeden na temat klasyfikacji, a drugi na temat regresji.
+[http://www.shogun-toolbox.org/static/notebook/current/DecisionTrees.html]
+
+
+
+
 
 \section{Biblioteka scikit-learn}
 
@@ -93,6 +220,7 @@ rtt r  tt\cite{test} t t t
 
 \section{Wnioski końcowe odnośnie biblioteki i projektu}
 
+\Urlmuskip=0mu plus 1mu\relax
 \addcontentsline{toc}{section}{Literatura}
 \bibliography{Projekt}
 
