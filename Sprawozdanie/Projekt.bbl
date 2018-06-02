@@ -41,16 +41,16 @@ B.~L., F.~J., O.~R., S.~C., Classification and Regression Trees, Taylor \&
 \bibitem{Gatnar1998}
 G.~E., Symboliczne metody klasyfikacji danych, PWN, Warszawa, 1998.
 
-\bibitem{Lula2007}
-L.~P., P.-P. G., T.~R., Metody sztucznej inteligencji i ich zastosowania w
-  ekonomii i zarządzaniu, Wydawnictwo Akademii Ekonomicznej, Kraków, 2007.
-
 \bibitem{AnalyticsWWW}
 A.~V.~C. Team,
   \href{https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/}{A
   complete tutorial on tree based modeling from scratch (in r \& python)}
   (2016).
 \newline\urlprefix\url{https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/}
+
+\bibitem{Lula2007}
+L.~P., P.-P. G., T.~R., Metody sztucznej inteligencji i ich zastosowania w
+  ekonomii i zarządzaniu, Wydawnictwo Akademii Ekonomicznej, Kraków, 2007.
 
 \bibitem{Lan2017}
 L.~H.,

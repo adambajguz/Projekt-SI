@@ -21,22 +21,12 @@ INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omsenc.dfu
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omsenc.dfu
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/polski/polski.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/polski/polski.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
@@ -45,6 +35,18 @@ INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxet
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/booktabs/booktabs.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/booktabs/booktabs.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
@@ -73,6 +75,9 @@ INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/rerunf
 INPUT Projekt.aux
 INPUT Projekt.aux
 OUTPUT Projekt.aux
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
@@ -91,59 +96,78 @@ OUTPUT Projekt.pdf
 INPUT ./Projekt.out
 INPUT ./Projekt.out
 OUTPUT Projekt.out
-INPUT media/PB_logo.png
-INPUT ./media/PB_logo.png
-INPUT ./media/PB_logo.png
-INPUT ./media/PB_logo.png
-INPUT ./media/PB_logo.png
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecrm1728.tfm
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecbx1728.tfm
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecrm1440.tfm
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecrm1200.tfm
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecbx1200.tfm
+INPUT img/PB_logo.png
+INPUT ./img/PB_logo.png
+INPUT ./img/PB_logo.png
+INPUT ./img/PB_logo.png
+INPUT ./img/PB_logo.png
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr17.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr7.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi10.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi7.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi5.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy10.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy7.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy5.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmex10.tfm
 INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecbx1440.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT Projekt.toc
 INPUT Projekt.toc
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecbx1000.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx10.tfm
 OUTPUT Projekt.toc
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
+INPUT img/structure.pdf
+INPUT ./img/structure.pdf
+INPUT ./img/structure.pdf
+INPUT ./img/structure.pdf
 INPUT Projekt.bbl
 INPUT Projekt.bbl
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1cmtt.fd
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1cmtt.fd
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ectt1000.tfm
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT Projekt.aux
 INPUT ./Projekt.out
 INPUT ./Projekt.out
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk
-INPUT C:/Users/Admin/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb

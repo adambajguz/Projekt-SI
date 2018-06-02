@@ -1,24 +1,24 @@
 \BOOKMARK [1][-]{section.1}{Wstep}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Drzewa decyzyjne w teorii decyzji i uczeniu maszynowym}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Idea drzew decyzji}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Drzewa klasyfikacyjne i regresyjne}{section.1}% 4
-\BOOKMARK [1][-]{section.2}{Budowa drzew decyzyjnych}{}% 5
-\BOOKMARK [1][-]{section.3}{Cechy drzew decyzyjnych}{}% 6
-\BOOKMARK [1][-]{section.4}{Rodzaje kryteri\363w podzia\233u}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Wsp\363\233czynnik Giniego}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Information gain}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{Gain ratio}{section.4}% 10
-\BOOKMARK [1][-]{section.5}{Algorytmy budowania drzew decyzyjnych}{}% 11
-\BOOKMARK [2][-]{subsection.5.1}{Algorytm CART}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.2}{Algorytm CHAID}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.3}{Algorytm ID3}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.4}{Algorytm C4.5}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.5}{Algorytm C5.0}{section.5}% 16
-\BOOKMARK [1][-]{section.6}{Przycinanie drzew decyzyjnych}{}% 17
-\BOOKMARK [1][-]{section.7}{Biblioteka scikit-learn}{}% 18
-\BOOKMARK [1][-]{section.8}{Opis programu}{}% 19
-\BOOKMARK [1][-]{section.9}{Wnioski}{}% 20
-\BOOKMARK [1][-]{section.10}{Opisanie danych wykorzystanych do testowania dzia\233ania metody wybranej biblioteki}{}% 21
-\BOOKMARK [1][-]{section.11}{Om\363wienie g\233\363wnych czesci programu/skryptu i wynik\363w}{}% 22
-\BOOKMARK [1][-]{section.12}{Wnioski koncowe odnosnie biblioteki i projektu}{}% 23
-\BOOKMARK [1][-]{section.12}{Literatura}{}% 24
+\BOOKMARK [2][-]{subsection.1.2}{Rodzaje drzew decyzyjnych}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Budowa drzew decyzyjnych}{}% 4
+\BOOKMARK [1][-]{section.3}{Idea drzew decyzji}{}% 5
+\BOOKMARK [1][-]{section.4}{Cechy drzew decyzyjnych}{}% 6
+\BOOKMARK [1][-]{section.5}{Rodzaje kryteri\363w podzia\233u}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Wsp\363\233czynnik Giniego}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Information gain}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.3}{Gain ratio}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Algorytmy budowania drzew decyzyjnych}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Algorytm CART}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Algorytm CHAID}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.3}{Algorytm ID3}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.4}{Algorytm C4.5}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.5}{Algorytm C5.0}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Przycinanie drzew decyzyjnych}{}% 17
+\BOOKMARK [1][-]{section.8}{Biblioteka scikit-learn}{}% 18
+\BOOKMARK [1][-]{section.9}{Opis programu}{}% 19
+\BOOKMARK [1][-]{section.10}{Wnioski}{}% 20
+\BOOKMARK [1][-]{section.11}{Opisanie danych wykorzystanych do testowania dzia\233ania metody wybranej biblioteki}{}% 21
+\BOOKMARK [1][-]{section.12}{Om\363wienie g\233\363wnych czesci programu/skryptu i wynik\363w}{}% 22
+\BOOKMARK [1][-]{section.13}{Wnioski koncowe odnosnie biblioteki i projektu}{}% 23
+\BOOKMARK [1][-]{section.13}{Literatura}{}% 24

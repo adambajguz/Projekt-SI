@@ -1,24 +1,24 @@
 \contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{2}{section.1}
 \contentsline {subsection}{\numberline {1.1}Drzewa decyzyjne w teorii decyzji i uczeniu maszynowym}{2}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Idea drzew decyzji}{2}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Drzewa klasyfikacyjne i regresyjne}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.2}Rodzaje drzew decyzyjnych}{2}{subsection.1.2}
 \contentsline {section}{\numberline {2}Budowa drzew decyzyjnych}{2}{section.2}
-\contentsline {section}{\numberline {3}Cechy drzew decyzyjnych}{3}{section.3}
-\contentsline {section}{\numberline {4}Rodzaje kryteri\IeC {\'o}w podzia\IeC {\l }u}{3}{section.4}
-\contentsline {subsection}{\numberline {4.1}Wsp\IeC {\'o}\IeC {\l }czynnik Giniego}{3}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Information gain}{3}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Gain ratio}{4}{subsection.4.3}
-\contentsline {section}{\numberline {5}Algorytmy budowania drzew decyzyjnych}{4}{section.5}
-\contentsline {subsection}{\numberline {5.1}Algorytm CART}{4}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Algorytm CHAID}{5}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Algorytm ID3}{5}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Algorytm C4.5}{5}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Algorytm C5.0}{5}{subsection.5.5}
-\contentsline {section}{\numberline {6}Przycinanie drzew decyzyjnych}{5}{section.6}
-\contentsline {section}{\numberline {7}Biblioteka scikit-learn}{6}{section.7}
-\contentsline {section}{\numberline {8}Opis programu}{6}{section.8}
-\contentsline {section}{\numberline {9}Wnioski}{6}{section.9}
-\contentsline {section}{\numberline {10}Opisanie danych wykorzystanych do testowania dzia\IeC {\l }ania metody wybranej biblioteki}{6}{section.10}
-\contentsline {section}{\numberline {11}Om\IeC {\'o}wienie g\IeC {\l }\IeC {\'o}wnych cz\IeC {\k e}\IeC {\'s}ci programu/skryptu i wynik\IeC {\'o}w}{6}{section.11}
-\contentsline {section}{\numberline {12}Wnioski ko\IeC {\'n}cowe odno\IeC {\'s}nie biblioteki i projektu}{6}{section.12}
-\contentsline {section}{Literatura}{6}{section.12}
+\contentsline {section}{\numberline {3}Idea drzew decyzji}{3}{section.3}
+\contentsline {section}{\numberline {4}Cechy drzew decyzyjnych}{3}{section.4}
+\contentsline {section}{\numberline {5}Rodzaje kryteri\IeC {\'o}w podzia\IeC {\l }u}{4}{section.5}
+\contentsline {subsection}{\numberline {5.1}Wsp\IeC {\'o}\IeC {\l }czynnik Giniego}{4}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Information gain}{4}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Gain ratio}{4}{subsection.5.3}
+\contentsline {section}{\numberline {6}Algorytmy budowania drzew decyzyjnych}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}Algorytm CART}{5}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Algorytm CHAID}{5}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Algorytm ID3}{5}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Algorytm C4.5}{6}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Algorytm C5.0}{6}{subsection.6.5}
+\contentsline {section}{\numberline {7}Przycinanie drzew decyzyjnych}{6}{section.7}
+\contentsline {section}{\numberline {8}Biblioteka scikit-learn}{6}{section.8}
+\contentsline {section}{\numberline {9}Opis programu}{6}{section.9}
+\contentsline {section}{\numberline {10}Wnioski}{6}{section.10}
+\contentsline {section}{\numberline {11}Opisanie danych wykorzystanych do testowania dzia\IeC {\l }ania metody wybranej biblioteki}{6}{section.11}
+\contentsline {section}{\numberline {12}Om\IeC {\'o}wienie g\IeC {\l }\IeC {\'o}wnych cz\IeC {\k e}\IeC {\'s}ci programu/skryptu i wynik\IeC {\'o}w}{6}{section.12}
+\contentsline {section}{\numberline {13}Wnioski ko\IeC {\'n}cowe odno\IeC {\'s}nie biblioteki i projektu}{6}{section.13}
+\contentsline {section}{Literatura}{6}{section.13}
