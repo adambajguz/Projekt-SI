@@ -1,0 +1,95 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Belson1959}
+B.~W., Matching and prediction on the principle of biological classification,
+  JRSS, Series C, Applied Statistics 8~(2).
+
+\bibitem{Morgan1963}
+J.~Morgan, J.~Sonquist, Problems in the analysis of survey data, and a
+  proposal, J. Amer. Statist. Assoc. 58 (1963) 415--434.
+
+\bibitem{MazumdarWWW}
+M.~P.,
+  \href{http://www.shogun-toolbox.org/static/notebook/current/DecisionTrees.html}{Decision
+  trees}.
+\newline\urlprefix\url{http://www.shogun-toolbox.org/static/notebook/current/DecisionTrees.html}
+
+\bibitem{Quinlan1986}
+J.~R. Quinlan, \href{https://doi.org/10.1007/bf00116251}{Induction of decision
+  trees}, Machine Learning 1~(1) (1986) 81--106.
+\newblock \href {http://dx.doi.org/10.1007/bf00116251}
+  {\path{doi:10.1007/bf00116251}}.
+\newline\urlprefix\url{https://doi.org/10.1007/bf00116251}
+
+\bibitem{Quinlan1990}
+J.~Quinlan, \href{https://doi.org/10.1109/21.52545}{Decision trees and
+  decision-making}, {IEEE} Transactions on Systems, Man, and Cybernetics 20~(2)
+  (1990) 339--346.
+\newblock \href {http://dx.doi.org/10.1109/21.52545}
+  {\path{doi:10.1109/21.52545}}.
+\newline\urlprefix\url{https://doi.org/10.1109/21.52545}
+
+\bibitem{Breiman1984}
+B.~L., F.~J., O.~R., S.~C., Classification and Regression Trees, Taylor \&
+  Francis Ltd, Wadsworth, Belmont, CA, 1984.
+
+\bibitem{Gatnar1998}
+G.~E., Symboliczne metody klasyfikacji danych, PWN, Warszawa, 1998.
+
+\bibitem{AnalyticsWWW}
+A.~V.~C. Team,
+  \href{https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/}{A
+  complete tutorial on tree based modeling from scratch (in r \& python)}
+  (2016).
+\newline\urlprefix\url{https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/}
+
+\bibitem{Lula2007}
+L.~P., P.-P. G., T.~R., Metody sztucznej inteligencji i ich zastosowania w
+  ekonomii i zarządzaniu, Wydawnictwo Akademii Ekonomicznej, Kraków, 2007.
+
+\bibitem{Lan2017}
+L.~H.,
+  \href{https://towardsdatascience.com/decision-trees-and-random-forests-for-classification-and-regression-pt-1-dbb65a458df}{Decision
+  trees and random forests for classification and regression pt.1}.
+\newline\urlprefix\url{https://towardsdatascience.com/decision-trees-and-random-forests-for-classification-and-regression-pt-1-dbb65a458df}
+
+\bibitem{AIspaceWWW}
+AIspace, \href{http://aispace.org/dTree/help/tutorial4.shtml}{Tutorial 4:
+  Splitting algorithms}.
+\newline\urlprefix\url{http://aispace.org/dTree/help/tutorial4.shtml}
+
+\bibitem{Brownlee2017}
+B.~J.,
+  \href{https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/}{How
+  to implement the decision tree algorithm from scratch in python} (2016).
+\newline\urlprefix\url{https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/}
+
+\bibitem{WhatWhenWWW}
+\href{http://what-when-how.com/artificial-intelligence/decision-tree-applications-for-data-modelling-artificial-intelligence/}{Decision
+  tree applications for data modelling (artificial intelligence)}.
+\newline\urlprefix\url{http://what-when-how.com/artificial-intelligence/decision-tree-applications-for-data-modelling-artificial-intelligence/}
+
+\bibitem{Kass1980}
+G.~V. Kass, \href{https://doi.org/10.2307/2986296}{An exploratory technique for
+  investigating large quantities of categorical data}, Applied Statistics
+  29~(2) (1980) 119.
+\newblock \href {http://dx.doi.org/10.2307/2986296}
+  {\path{doi:10.2307/2986296}}.
+\newline\urlprefix\url{https://doi.org/10.2307/2986296}
+
+\bibitem{Quinlan1993}
+J.~R. Quinlan, C4.5: Programs for Machine Learning, Morgan Kaufmann Publishers
+  Inc., San Francisco, CA, USA, 1993.
+
+\bibitem{scikit}
+scikit learn,
+  \href{http://scikit-learn.org/stable/modules/tree.html#tree-algorithms-id3-c4-5-c5-0-and-cart}{Decision
+  Trees}.
+\newline\urlprefix\url{http://scikit-learn.org/stable/modules/tree.html#tree-algorithms-id3-c4-5-c5-0-and-cart}
+
+\end{thebibliography}

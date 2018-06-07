@@ -136,6 +136,7 @@ INPUT img/structure.pdf
 INPUT ./img/structure.pdf
 INPUT ./img/structure.pdf
 INPUT ./img/structure.pdf
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT Projekt.bbl
 INPUT Projekt.bbl
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd
@@ -165,6 +166,8 @@ INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb

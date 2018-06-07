@@ -172,6 +172,78 @@ Wydajność drzewa można dodatkowo zwiększyć przez przycinanie. Polega ono na
 
 
 \section{Biblioteka scikit-learn}
+\subsection{Wstęp}
+Scikit-learn to bezpłatna biblioteka do uczenia maszynowego z wykorzytaniem języka. Zawiera ona różne algorytmy klasyfikacji, regresji i grupowania, w tym metodę drzew decyzyjnych. Co więcej, bibliteka ta jest przystosowana współdziałania z numerycznymi i naukowymi bibliotekami NumPy i SciPy w Pythonie. Popularne grupy modeli dostarczane przez scikit-learn to:
+\begin{itemize}
+	\item Clustering: do grupowania nieoznakowanych danych, takich jak k-means.
+	\item Cross Validation: do oceny wydajności nadzorowanych modeli na niewidocznych danych.
+	\item Datasets: dla zestawów danych testowych i do generowania zestawów danych o określonych właściwościach do badania zachowania modelu.
+	\item Dimensionality Reduction: w celu zmniejszenia liczby atrybutów w danych do podsumowania, wizualizacji i wyboru funkcji, takich jak analiza głównych składników.
+	\item Ensemble methods: do łączenia przewidywań wielu nadzorowanych modeli.
+	\item Feature extraction: do definiowania atrybutów w obrazie i danych tekstowych.
+	\item Feature selection: do identyfikacji znaczących atrybutów, z których można tworzyć nadzorowane modele.
+	\item Parameter Tuning: aby uzyskać jak najwięcej z nadzorowanych modeli.
+	\item Manifold Learning: do podsumowywania i przedstawiania złożonych wielowymiarowych danych.
+	\item Supervised Models: modele liniowe, analiza dyskryminacyjna, sieci neuronowe, drzewa decyzyjne i wiele więcej.
+\end{itemize}
+
+\subsection{Moduł drzew decyzyjnych}
+Moduł drzew decyzyjnych - sklearn.tree zawiera oparte na drzewach decyzyjnych modele klasyfikacji i regresji. Klasy zawarte w tym module to:
+\begin{itemize}
+	\item tree.DecisionTreeClassifier ([criterion, ...]) - Klasyfikator drzewa decyzyjnego.
+	\item tree.DecisionTreeRegressor ([criterion, ...]) - Regressor drzewa decyzyjnego.
+	\item tree.ExtraTreeClassifier ([criterion, ...]) - Niezwykle losowy klasyfikator drzewa.
+	\item tree.ExtraTreeRegressor ([criterion, ...]) - Niezwykle losowy regressor drzewa.
+	\item tree.export\_graphviz (decision\_tree , [...]) - Eksportowanie drzewa decyzyjngo w formacie DOT.
+\end{itemize}
+Najważnijesze z powyższych klas opisano w kolejnych podrozdziałach.
+
+\subsubsection{Klasa DecisionTreeClassifier}
+\begin{flushleft}
+	\textit{class sklearn.tree.DecisionTreeClassifier(criterion=’gini’, splitter=’best’, max\_depth=None, min\_samples\_split=2, min\_samples\_leaf=1, min\_weight\_fraction\_leaf=0.0, max\_features=None, random\_state=None, max\_leaf\_nodes=None, min\_impurity\_decrease=0.0, min\_impurity\_split=None, class\_weight=None, presort=False)}
+\end{flushleft}\par
+\vskip 0.2in
+
+DecisionTreeClassifier() to funkcja klasyfikująca dla DecisionTree. Stanowi ona konstruktor klasy DecisionTreeClassifier. Ważne parametry to:
+\begin{itemize}
+	\item \textbf{criterion:} definiuje funkcję pomiaru jakości podziału. Sklearn obsługuje kryteria "gini" dla indeksu Gini i "entropy" dla Information Gain. Domyślnie przyjmuje wartość "gini".
+	\item \textbf{splitter:} definiuje strategię wyboru podziału w każdym węźle. Wartość "best" oznacza, że należy wybrać najlepszy podział, a "random", aby wybrać najlepszy podział losowy. Domyślnie przyjmuje wartość "best".
+	\item \textbf{max\_features:} definiuje ilość funkcji do rozważenia przy poszukiwaniu najlepszego podziału. Można wprowadzić liczbę całkowitą, zmiennoprzecinkową, łańcuchową i wartość None.
+	\begin{itemize}
+		\item Jeśli wprowadzona jest liczba całkowita jest ona brana za maksymalną wartością dla każdego podziału.
+		\item Jeśli zostanie użyta wartość zmiennoprzecinkowa, pokazuje ona procent elementów w każdym podziale.
+		\item Jeśli zostanie wybrane "auto" lub "sqrt", wówczas max\_features = $\sqrt{n\_features}$.
+		\item Jeśli zostanie wybrany log2, wówczas max\_features = $\log_2{(n\_features)}$.
+		\item Jeśli nie wprowadzono własnej wartości (wartość domyślna None), wówczas max\_features = n\_features.
+	\end{itemize}
+
+	\item \textbf{max\_depth:} parametr określa maksymalną głębokość drzewa. Może przyjmować dowolną liczbę całkowitą lub None. Jeśli ustawiono None, to węzły są rozszerzane, aż wszystkie próbki zostaną wykorzystane lub dopóki wszystkie liście nie zawierają próbek mniejszych niż min\_samples\_split. Domyślnie przyjmuje wartość None.
+	\item \textbf{min\_samples\_split:} parametr określa minimlaną liczba próbek do podziąłu. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_split jako wartość mininalną, a jeśli podano liczbę zmiennoprzecinkowoą, wówczas pokazuje ona procent próbek. Domyślnie przyjmuje wartość 2.
+	\item \textbf{min\_samples\_leaf:} minimalna liczba próbek, które muszą znajdować się w węźle liści. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_leaf jako wartość minimalną, a jeśli zmiennoprzecinkowa, to pokazuje ona procent próbek. Domyślnie przyjmuje wartość 1.
+	\item \textbf{max\_leaf\_nodes:} określa maksymalną liczbę możliwych liści. Jeśli None, pobiera nieograniczoną liczbę węzłów liści. Domyślnie przyjmuje wartość Brak.
+	\item \textbf{min\_impurity\_split:} definiuje próg wczesnego zatrzymywania wzrostu drzewa. Węzeł zostanie podzielony, jeśli jego nierównomierność przekroczy próg, w przeciwnym razie jest to liść.
+\end{itemize}
+\vskip 0.2in
+
+Metody klasy DecisionTreeClassifier to:
+\begin{itemize}
+	\item \textbf{apply(X [, check\_input])} - zwraca indeks liścia, dla którego każda próbka jest przewidywana.
+	\item \textbf{decision\_path(X [, check\_input])} - zwraca ścieżkę decyzyjną w drzewie
+	\item \textbf{fit(X, y [, sample\_weight, check\_input, ...])} - zbuduj klasyfikator drzewa decyzyjnego z zestawu treningowego (X, y).
+	\item \textbf{get\_params([deep])} - pobierz parametry tego estymatora.
+	\item \textbf{predict(X [, check\_input])} - wyznacz klasę lub wartość regresji dla X.
+	\item \textbf{predict\_log\_proba(X)} - przewiduj log-probabilitie klasy o X próbkach wejściowych.
+	\item \textbf{predict\_proba(X [, check\_input])} - przewiduj prawdopodobieństwo klasowe próbek wejściowych X.
+	\item \textbf{score(X, y [, sample\_weight])} - zwraca średnią dokładność podanych danych testowych i etykiet.
+	\item \textbf{set\_params(** params)} - ustaw parametry tego estymatora.
+\end{itemize}
+
+\subsubsection{Klasa DecisionTreeRegressor}
+\begin{flushleft}
+	\textit{class sklearn.tree.DecisionTreeRegressor(criterion=’mse’, splitter=’best’, max\_depth=None, min\_samples\_split=2, min\_samples\_leaf=1, min\_weight\_fraction\_leaf=0.0, max\_features=None, random\_state=None, max\_leaf\_nodes=None, min\_impurity\_decrease=0.0, min\_impurity\_split=None, presort=False)}
+\end{flushleft}\par
+\vskip 0.2in
+
 
 \section{Opis programu}
 
