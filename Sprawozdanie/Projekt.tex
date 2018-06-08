@@ -188,7 +188,7 @@ Scikit-learn to bezpłatna biblioteka do uczenia maszynowego z wykorzytaniem ję
 \end{itemize}
 
 \subsection{Moduł drzew decyzyjnych}
-Moduł drzew decyzyjnych - sklearn.tree zawiera oparte na drzewach decyzyjnych modele klasyfikacji i regresji. Klasy zawarte w tym module to:
+Moduł drzew decyzyjnych - sklearn.tree zawiera oparte na drzewach decyzyjnych modele klasyfikacji i regresji. Scikit-learn używa zoptymalizowanej wersji algorytmu CART (Podrozdział \ref{sub:CART}). Klasy zawarte w tym module to:
 \begin{itemize}
 	\item tree.DecisionTreeClassifier ([criterion, ...]) - Klasyfikator drzewa decyzyjnego.
 	\item tree.DecisionTreeRegressor ([criterion, ...]) - Regressor drzewa decyzyjnego.
@@ -221,7 +221,7 @@ DecisionTreeClassifier() to funkcja klasyfikująca dla DecisionTree. Stanowi ona
 	\item \textbf{max\_depth:} parametr określa maksymalną głębokość drzewa. Może przyjmować dowolną liczbę całkowitą lub None. Jeśli ustawiono None, to węzły są rozszerzane, aż wszystkie próbki zostaną wykorzystane lub dopóki wszystkie liście nie zawierają próbek mniejszych niż min\_samples\_split. Domyślnie przyjmuje wartość None.
 	\item \textbf{min\_samples\_split:} parametr określa minimlaną liczba próbek do podziąłu. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_split jako wartość mininalną, a jeśli podano liczbę zmiennoprzecinkowoą, wówczas pokazuje ona procent próbek. Domyślnie przyjmuje wartość 2.
 	\item \textbf{min\_samples\_leaf:} minimalna liczba próbek, które muszą znajdować się w węźle liści. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_leaf jako wartość minimalną, a jeśli zmiennoprzecinkowa, to pokazuje ona procent próbek. Domyślnie przyjmuje wartość 1.
-	\item \textbf{max\_leaf\_nodes:} określa maksymalną liczbę możliwych liści. Jeśli None, pobiera nieograniczoną liczbę węzłów liści. Domyślnie przyjmuje wartość Brak.
+	\item \textbf{max\_leaf\_nodes:} określa maksymalną liczbę możliwych liści. Jeśli None, pobiera nieograniczoną liczbę węzłów liści. Domyślnie przyjmuje wartość None - bez ograniczeń.
 	\item \textbf{min\_impurity\_split:} definiuje próg wczesnego zatrzymywania wzrostu drzewa. Węzeł zostanie podzielony, jeśli jego nierównomierność przekroczy próg, w przeciwnym razie jest to liść.
 \end{itemize}
 \vskip 0.2in
@@ -246,6 +246,51 @@ Metody klasy DecisionTreeClassifier to:
 \end{flushleft}\par
 \vskip 0.2in
 
+DecisionTreeRegressor() to funkcja regresyjna dla DecisionTree. Stanowi ona konstruktor klasy DecisionTreeRegressor. Ważne parametry to:
+\begin{itemize}
+	\item \textbf{criterion:} funkcja pomiaru jakości podziału. Wspierane kryteria to "mse" dla błędu średniej kwadratowej, który jest równy zmniejszeniu wariancji jako kryterium wyboru cech i minimalizuje utratę L2 przy użyciu średniej każdego węzła końcowego, "friedman\_mse", który wykorzystuje błąd średniej kwadratowej z wynikiem poprawy Friedmana dla potencjału dzieli się i "mae" na średni błąd bezwzględny, który minimalizuje utratę L1 przy użyciu mediany każdego węzła końcowego.
+	\item splitter: strategia używana do wyboru podziału w każdym węźle. Obsługiwane strategie są "best", aby wybrać najlepszy podział i "random", aby wybrać najlepszy podział losowy.
+	\item\textbf{ max\_depth:} maksymalna głębokość drzewa. Jeśli ustawiono None, to węzły są rozszerzane, aż wszystkie próbki zostaną wykorzystane lub dopóki wszystkie liście nie zawierają próbek mniejszych niż min\_samples\_split.
+	\item \textbf{min\_samples\_split:} minimalna liczba próbek potrzebnych do podzielenia węzła wewnętrznego:
+	\begin{itemize}
+		\item Jeśli int, należy rozważyć min\_samples\_split jako minimalną liczbę.
+		\item Jeśli zmienna, min\_samples\_split jest wartością procentową, a suf (min\_samples\_split * n\_samples) to minimalna liczba próbek dla każdego podziału.
+	\end{itemize}
+
+	\item \textbf{min\_samples\_leaf:} minimalna liczba próbek, które muszą znajdować się w węźle liści:
+	\begin{itemize}
+		\item Jeśli int, to jako minimum należy przyjąć min\_samples\_leaf.
+		\item Jeśli wartość zmiennoprzecinkowa, min\_samples\_leaf jest wartością procentową, a \\ceil(min\_samples\_leaf * n\_samples ) to minimalna liczba próbek dla każdego węzła.
+	\end{itemize}
+
+	\item \textbf{min\_weight\_fraction\_leaf:} minimalna ważona część sumy wag (wszystkich próbek wejściowych), która musi znajdować się w węźle liści. Próbki mają jednakową wagę, gdy nie podano próbki.
+	\item max\_features: liczba funkcji do rozważenia przy poszukiwaniu najlepszego podziału:
+	\begin{itemize}
+		\item Jeśli int, to weź pod uwagę cechy max\_features dla każdego podziału.
+		\item W przypadku wartości zmiennoprzecinkowej, max\_features jest wartością procentową, a cechy int (max\_features * n\_features) są uwzględniane przy każdym podzieleniu.
+		\item Jeśli "auto", to max\_features = n\_features.
+		\item Jeśli "sqrt", to max\_features = $\sqrt{n\_features}$.
+		\item Jeśli "log2", to max\_features = $\log_2{(n\_features)}$.
+		\item Jeśli brak, to max\_features = n\_features.
+\end{itemize}
+
+	\item \textbf{random\_state:} jeśli int, random\_state jest nasieniem używanym przez generator liczb losowych; Jeśli wystąpienie RandomState, random\_state jest generatorem liczb losowych; Jeśli nie, generator liczb losowych jest instancją RandomState używaną przez np. random.
+	\item \textbf{max\_leaf\_nodes:} określa maksymalną liczbę możliwych liści. Jeśli None, pobiera nieograniczoną liczbę węzłów liści. Domyślnie przyjmuje wartość None - bez ograniczeń.
+	\item \textbf{min\_impurity\_decrease:} węzeł zostanie podzielony, jeśli podział ten spowoduje zmniejszenie nierównomierności większego lub równego tej wartości.
+	\item \textbf{presort:} czy presortować dane, aby przyspieszyć znalezienie najlepszych podziałów w dopasowaniu. W przypadku domyślnych ustawień drzewa decyzyjnego na dużych zestawach danych ustawienie tego na wartość true może spowolnić proces szkolenia. W przypadku korzystania z mniejszego zestawu danych lub ograniczonej głębokości może to przyspieszyć szkolenie.
+\end{itemize}
+\vskip 0.2in
+
+Metody klasy DecisionTreeRegressor to:
+\begin{itemize}
+	\item \textbf{apply(X [, check\_input])} - zwraca indeks liścia, dla którego każda próbka jest przewidywana.
+	\item \textbf{decision\_path(X [, check\_input])} - zwraca ścieżkę decyzyjną w drzewie
+	\item \textbf{fit(X, y [, sample\_weight, check\_input, ...])} - zbuduj klasyfikator drzewa decyzyjnego z zestawu treningowego (X, y).
+	\item \textbf{get\_params([deep])} - pobierz parametry tego estymatora.
+	\item \textbf{predict(X [, check\_input])} - wyznacz klasę lub wartość regresji dla X.
+	\item \textbf{score(X, y [, sample\_weight])} - zwraca średnią dokładność podanych danych testowych i etykiet.
+	\item \textbf{set\_params(** params)} - ustaw parametry tego estymatora.
+\end{itemize}
 
 \section{Opis programu}
 
