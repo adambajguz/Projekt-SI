@@ -1,0 +1,1 @@
+jt -t oceans16 -T -f roboto -fs 10 -cellw 98%

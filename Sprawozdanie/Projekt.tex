@@ -296,10 +296,10 @@ Metody klasy DecisionTreeRegressor to:
 \end{itemize}
 
 \section{Opis wykorzystanych zbiorów danych}
-W celu przetestowania działania metody drzew decyzyjnych w biblitece scikit-learn wykorzystano dwa biory danych: Forest Fires\cite{ForestFiresDS} oraz Mushroom \cite{MushroomDS}.
+W celu przetestowania działania metody drzew decyzyjnych w biblitece scikit-learn wykorzystano dwa biory danych: Forest Fires \cite{ForestFiresDS} oraz Mushroom \cite{MushroomDS}.
 
-\subsection{Forest Fires Data Set}
-Zbiór danych zawiera opisy spalony obszarów lasów, w północno-wschodniej części Portugalii. Zbiór posiada 12 atrybutów kategoryczne lub numerycznych oraz 517 obiektów (próbek). Definicje wartości atrybutów są następujące:
+\subsection{Zbiór danych Forest Fires}
+Zbiór danych zawiera opisy spalony obszarów lasów, w północno-wschodniej części Portugalii. Zbiór posiada 12 atrybutów kategoryczne lub numerycznych oraz 517 obiektów (próbek) \cite{ForestFiresDS}. Definicje wartości atrybutów są następujące:
 \begin{enumerate}
 	\item \textbf{X:} x-axis spatial coordinate within the Montesinho park map: 1 to 9
 	\item \textbf{Y:} y-axis spatial coordinate within the Montesinho park map: 2 to 9
@@ -317,8 +317,8 @@ Zbiór danych zawiera opisy spalony obszarów lasów, w północno-wschodniej cz
 (this output variable is very skewed towards 0.0, thus it may make sense to model with the logarithm transform).  
 \end{enumerate}
 
-\subsection{Mushroom Data Set}
-Pobrany zbiór danych Mushroom zapisano w formacie CSV wraz z nazwami nagłówków (atrybutów), zgodnie ze specyfikacją \cite{MushroomDS}. Zbiór danych zawiera opisy hipotetycznych próbek odpowiadających 23 gatunkom grzybów z rodziny Agaricus i Lepiota. Każdy gatunek jest określony jako jadalny lub trujący. Zbiór posiada 22 kategoryczne atrybuty warunkowe, 1 atrybut decyzyjny oraz 8124 obiekty (próbki). Definicje wartości atrybutów są następujące:
+\subsection{Zbiór danych Mushroom}
+Pobrany zbiór danych Mushroom zapisano w formacie CSV wraz z nazwami nagłówków (atrybutów), zgodnie ze specyfikacją . Zbiór danych zawiera opisy hipotetycznych próbek odpowiadających 23 gatunkom grzybów z rodziny Agaricus i Lepiota. Każdy gatunek jest określony jako jadalny lub trujący. Zbiór posiada 22 kategoryczne atrybuty warunkowe, 1 atrybut decyzyjny oraz 8124 obiekty (próbki) \cite{MushroomDS}. Definicje wartości atrybutów są następujące:
 \begin{enumerate}
 	\item \textbf{classes:} edible=e, poisonous=p (atrybut decyzyjnym)
 	\item \textbf{cap-shape:} bell=b, conical=c, convex=x, flat=f, knobbed=k, sunken=s
