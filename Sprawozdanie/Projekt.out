@@ -1,0 +1,31 @@
+\BOOKMARK [1][-]{section.1}{Wstep}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Drzewa decyzyjne w teorii decyzji i uczeniu maszynowym}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Rodzaje drzew decyzyjnych}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Budowa drzew decyzyjnych}{}% 4
+\BOOKMARK [1][-]{section.3}{Idea drzew decyzji}{}% 5
+\BOOKMARK [1][-]{section.4}{Cechy drzew decyzyjnych}{}% 6
+\BOOKMARK [1][-]{section.5}{Rodzaje kryteri\363w podzia\233u}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Wsp\363\233czynnik Giniego}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Information gain}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.3}{Gain ratio}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Algorytmy budowania drzew decyzyjnych}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Algorytm CART}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Algorytm CHAID}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.3}{Algorytm ID3}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.4}{Algorytm C4.5}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.5}{Algorytm C5.0}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Przycinanie drzew decyzyjnych}{}% 17
+\BOOKMARK [1][-]{section.8}{Biblioteka scikit-learn}{}% 18
+\BOOKMARK [2][-]{subsection.8.1}{Wstep}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.2}{Modu\233 drzew decyzyjnych}{section.8}% 20
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Klasa DecisionTreeClassifier}{subsection.8.2}% 21
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Klasa DecisionTreeRegressor}{subsection.8.2}% 22
+\BOOKMARK [1][-]{section.9}{Opis wykorzystanych zbior\363w danych}{}% 23
+\BOOKMARK [2][-]{subsection.9.1}{Forest Fires Data Set}{section.9}% 24
+\BOOKMARK [2][-]{subsection.9.2}{Mushroom Data Set}{section.9}% 25
+\BOOKMARK [1][-]{section.10}{Opis programu}{}% 26
+\BOOKMARK [1][-]{section.11}{Wnioski}{}% 27
+\BOOKMARK [1][-]{section.12}{Podzia\233 pracy}{}% 28
+\BOOKMARK [1][-]{section.13}{Om\363wienie g\233\363wnych czesci programu/skryptu i wynik\363w}{}% 29
+\BOOKMARK [1][-]{section.14}{Wnioski koncowe odnosnie biblioteki i projektu}{}% 30
+\BOOKMARK [1][-]{section.14}{Literatura}{}% 31

@@ -190,18 +190,21 @@ Scikit-learn to bezpłatna biblioteka do uczenia maszynowego z wykorzytaniem ję
 \subsection{Moduł drzew decyzyjnych}
 Moduł drzew decyzyjnych - sklearn.tree zawiera oparte na drzewach decyzyjnych modele klasyfikacji i regresji. Scikit-learn używa zoptymalizowanej wersji algorytmu CART (Podrozdział \ref{sub:CART}). Klasy zawarte w tym module to:
 \begin{itemize}
-	\item tree.DecisionTreeClassifier ([criterion, ...]) - Klasyfikator drzewa decyzyjnego.
-	\item tree.DecisionTreeRegressor ([criterion, ...]) - Regressor drzewa decyzyjnego.
-	\item tree.ExtraTreeClassifier ([criterion, ...]) - Niezwykle losowy klasyfikator drzewa.
-	\item tree.ExtraTreeRegressor ([criterion, ...]) - Niezwykle losowy regressor drzewa.
-	\item tree.export\_graphviz (decision\_tree , [...]) - Eksportowanie drzewa decyzyjngo w formacie DOT.
+	\item tree.\textbf{DecisionTreeClassifier}([criterion, ...]) - klasyfikator drzewa decyzyjnego,
+	\item tree.\textbf{DecisionTreeRegressor}([criterion, ...]) - regresyjne drzewo decyzyjne,
+	\item tree.\textbf{ExtraTreeClassifier}([criterion, ...]) - niezwykle losowy klasyfikator drzewa decyzyjnego,
+	\item tree.\textbf{ExtraTreeRegressor}([criterion, ...]) - niezwykle losowe drzewo regresyjne,
+	\item tree.\textbf{export\_graphviz}(decision\_tree , [...]) - eksportowanie drzewa decyzyjngo w formacie DOT.
 \end{itemize}
-Najważnijesze z powyższych klas opisano w podrozdziałach \ref{subsub:DecisionTreeClassifier} oraz \ref{subsub:DecisionTreeRegressor}.
+
+Drzewa z klas ExtraTreeClassifier i ExtraTreeRegressor różnią się od klasycznych drzew decyzyjnych sposobem ich budowania. Szukając najlepszego podziału, aby podzielić próbki węzła na dwie grupy, losowe podziały są dokonywane dla każdej z możliwych wartości parametru max\_features i losowo wybranych cech. Wybierany jest najlepszy podział między tymi elementami. Gdy max\_features ma wartość~1, oznacza to utworzenie całkowicie losowego drzewa decyzyjnego.
+
+Najważniejsze z powyższych klas opisano w podrozdziałach \ref{subsub:DecisionTreeClassifier} oraz \ref{subsub:DecisionTreeRegressor}.
 
 \subsubsection{Klasa DecisionTreeClassifier}
 \label{subsub:DecisionTreeClassifier}
 \begin{flushleft}
-	\textit{class sklearn.tree.DecisionTreeClassifier(criterion=’gini’, splitter=’best’, max\_depth=None, min\_samples\_split=2, min\_samples\_leaf=1, min\_weight\_fraction\_leaf=0.0, max\_features=None, random\_state=None, max\_leaf\_nodes=None, min\_impurity\_decrease=0.0, min\_impurity\_split=None, class\_weight=None, presort=False)}
+	\textit{class sklearn.tree.\textbf{DecisionTreeClassifier}(criterion=’gini’, splitter=’best’, max\_depth=None, min\_samples\_split=2, min\_samples\_leaf=1, min\_weight\_fraction\_leaf=0.0, max\_features=None, random\_state=None, max\_leaf\_nodes=None, min\_impurity\_decrease=0.0, min\_impurity\_split=None, class\_weight=None, presort=False)}
 \end{flushleft}\par
 \vskip 0.2in
 
@@ -219,7 +222,7 @@ DecisionTreeClassifier() to funkcja klasyfikująca dla DecisionTree. Stanowi ona
 	\end{itemize}
 
 	\item \textbf{max\_depth:} parametr określa maksymalną głębokość drzewa. Może przyjmować dowolną liczbę całkowitą lub None. Jeśli ustawiono None, to węzły są rozszerzane, aż wszystkie próbki zostaną wykorzystane lub dopóki wszystkie liście nie zawierają próbek mniejszych niż min\_samples\_split. Domyślnie przyjmuje wartość None.
-	\item \textbf{min\_samples\_split:} parametr określa minimlaną liczba próbek do podziąłu. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_split jako wartość mininalną, a jeśli podano liczbę zmiennoprzecinkowoą, wówczas pokazuje ona procent próbek. Domyślnie przyjmuje wartość 2.
+	\item \textbf{min\_samples\_split:} parametr określa minimlaną liczba próbek do podziału. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_split jako wartość mininalną, a jeśli podano liczbę zmiennoprzecinkowoą, wówczas pokazuje ona procent próbek. Domyślnie przyjmuje wartość 2.
 	\item \textbf{min\_samples\_leaf:} minimalna liczba próbek, które muszą znajdować się w węźle liści. Jeśli zostanie podana wartość całkowita, należy rozważyć min\_samples\_leaf jako wartość minimalną, a jeśli zmiennoprzecinkowa, to pokazuje ona procent próbek. Domyślnie przyjmuje wartość 1.
 	\item \textbf{max\_leaf\_nodes:} określa maksymalną liczbę możliwych liści. Jeśli None, pobiera nieograniczoną liczbę węzłów liści. Domyślnie przyjmuje wartość None - bez ograniczeń.
 	\item \textbf{min\_impurity\_split:} definiuje próg wczesnego zatrzymywania wzrostu drzewa. Węzeł zostanie podzielony, jeśli jego nierównomierność przekroczy próg, w przeciwnym razie jest to liść.
@@ -242,15 +245,15 @@ Metody klasy DecisionTreeClassifier to:
 \subsubsection{Klasa DecisionTreeRegressor}
 \label{subsub:DecisionTreeRegressor}
 \begin{flushleft}
-	\textit{class sklearn.tree.DecisionTreeRegressor(criterion=’mse’, splitter=’best’, max\_depth=None, min\_samples\_split=2, min\_samples\_leaf=1, min\_weight\_fraction\_leaf=0.0, max\_features=None, random\_state=None, max\_leaf\_nodes=None, min\_impurity\_decrease=0.0, min\_impurity\_split=None, presort=False)}
+	\textit{class sklearn.tree.\textbf{DecisionTreeRegressor}(criterion=’mse’, splitter=’best’, max\_depth=None, min\_samples\_split=2, min\_samples\_leaf=1, min\_weight\_fraction\_leaf=0.0, max\_features=None, random\_state=None, max\_leaf\_nodes=None, min\_impurity\_decrease=0.0, min\_impurity\_split=None, presort=False)}
 \end{flushleft}\par
 \vskip 0.2in
 
 DecisionTreeRegressor() to funkcja regresyjna dla DecisionTree. Stanowi ona konstruktor klasy DecisionTreeRegressor. Ważne parametry to:
 \begin{itemize}
 	\item \textbf{criterion:} funkcja pomiaru jakości podziału. Wspierane kryteria to "mse" dla błędu średniej kwadratowej, który jest równy zmniejszeniu wariancji jako kryterium wyboru cech i minimalizuje utratę L2 przy użyciu średniej każdego węzła końcowego, "friedman\_mse", który wykorzystuje błąd średniej kwadratowej z wynikiem poprawy Friedmana dla potencjału dzieli się i "mae" na średni błąd bezwzględny, który minimalizuje utratę L1 przy użyciu mediany każdego węzła końcowego.
-	\item splitter: strategia używana do wyboru podziału w każdym węźle. Obsługiwane strategie są "best", aby wybrać najlepszy podział i "random", aby wybrać najlepszy podział losowy.
-	\item\textbf{ max\_depth:} maksymalna głębokość drzewa. Jeśli ustawiono None, to węzły są rozszerzane, aż wszystkie próbki zostaną wykorzystane lub dopóki wszystkie liście nie zawierają próbek mniejszych niż min\_samples\_split.
+	\item \textbf{splitter:} strategia używana do wyboru podziału w każdym węźle. Obsługiwane strategie są "best", aby wybrać najlepszy podział i "random", aby wybrać najlepszy podział losowy.
+	\item \textbf{max\_depth:} maksymalna głębokość drzewa. Jeśli ustawiono None, to węzły są rozszerzane, aż wszystkie próbki zostaną wykorzystane lub dopóki wszystkie liście nie zawierają próbek mniejszych niż min\_samples\_split.
 	\item \textbf{min\_samples\_split:} minimalna liczba próbek potrzebnych do podzielenia węzła wewnętrznego:
 	\begin{itemize}
 		\item Jeśli int, należy rozważyć min\_samples\_split jako minimalną liczbę.
@@ -264,7 +267,7 @@ DecisionTreeRegressor() to funkcja regresyjna dla DecisionTree. Stanowi ona kons
 	\end{itemize}
 
 	\item \textbf{min\_weight\_fraction\_leaf:} minimalna ważona część sumy wag (wszystkich próbek wejściowych), która musi znajdować się w węźle liści. Próbki mają jednakową wagę, gdy nie podano próbki.
-	\item max\_features: liczba funkcji do rozważenia przy poszukiwaniu najlepszego podziału:
+	\item \textbf{max\_features:} liczba funkcji do rozważenia przy poszukiwaniu najlepszego podziału:
 	\begin{itemize}
 		\item Jeśli int, to weź pod uwagę cechy max\_features dla każdego podziału.
 		\item W przypadku wartości zmiennoprzecinkowej, max\_features jest wartością procentową, a cechy int (max\_features * n\_features) są uwzględniane przy każdym podzieleniu.
@@ -292,11 +295,70 @@ Metody klasy DecisionTreeRegressor to:
 	\item \textbf{set\_params(** params)} - ustaw parametry tego estymatora.
 \end{itemize}
 
+\section{Opis wykorzystanych zbiorów danych}
+W celu przetestowania działania metody drzew decyzyjnych w biblitece scikit-learn wykorzystano dwa biory danych: Forest Fires\cite{ForestFiresDS} oraz Mushroom \cite{MushroomDS}.
+
+\subsection{Forest Fires Data Set}
+Zbiór danych zawiera opisy spalony obszarów lasów, w północno-wschodniej części Portugalii. Zbiór posiada 12 atrybutów kategoryczne lub numerycznych oraz 517 obiektów (próbek). Definicje wartości atrybutów są następujące:
+\begin{enumerate}
+	\item \textbf{X:} x-axis spatial coordinate within the Montesinho park map: 1 to 9
+	\item \textbf{Y:} y-axis spatial coordinate within the Montesinho park map: 2 to 9
+	\item \textbf{month:} month of the year: "jan" to "dec" 
+	\item \textbf{day:} day of the week: "mon" to "sun"
+	\item \textbf{FFMC:} FFMC index from the FWI system: 18.7 to 96.20
+	\item \textbf{DMC:} DMC index from the FWI system: 1.1 to 291.3 
+	\item \textbf{DC:} DC index from the FWI system: 7.9 to 860.6 
+	\item \textbf{ISI:} ISI index from the FWI system: 0.0 to 56.10
+	\item \textbf{temp}: temperature in Celsius degrees: 2.2 to 33.30
+	\item \textbf{RH:} relative humidity in \%: 15.0 to 100
+	\item \textbf{wind:} wind speed in km/h: 0.40 to 9.40 
+	\item \textbf{rain:} outside rain in mm/m2 : 0.0 to 6.4 
+	\item \textbf{area:} the burned area of the forest (in ha): 0.00 to 1090.84 
+(this output variable is very skewed towards 0.0, thus it may make sense to model with the logarithm transform).  
+\end{enumerate}
+
+\subsection{Mushroom Data Set}
+Pobrany zbiór danych Mushroom zapisano w formacie CSV wraz z nazwami nagłówków (atrybutów), zgodnie ze specyfikacją \cite{MushroomDS}. Zbiór danych zawiera opisy hipotetycznych próbek odpowiadających 23 gatunkom grzybów z rodziny Agaricus i Lepiota. Każdy gatunek jest określony jako jadalny lub trujący. Zbiór posiada 22 kategoryczne atrybuty warunkowe, 1 atrybut decyzyjny oraz 8124 obiekty (próbki). Definicje wartości atrybutów są następujące:
+\begin{enumerate}
+	\item \textbf{classes:} edible=e, poisonous=p (atrybut decyzyjnym)
+	\item \textbf{cap-shape:} bell=b, conical=c, convex=x, flat=f, knobbed=k, sunken=s
+	\item \textbf{cap-surface:} fibrous=f, grooves=g, scaly=y, smooth=s
+	\item \textbf{cap-color:} brown=n ,buff=b, cinnamon=c, gray=g, green=r, pink=p, purple=u, red=e, white=w, yellow=y
+	\item \textbf{bruises:} bruises=t, no=f
+	\item \textbf{odor:} almond=a, anise=l, creosote=c, fishy=y, foul=f, musty=m, none=n, pungent=p, spicy=s
+	\item \textbf{gill-attachment:} attached=a, descending=d, free=f, notched=n
+	\item \textbf{gill-spacing:} close=c, crowded=w, distant=d
+	\item \textbf{gill-size:} broad=b, narrow=n
+	\item \textbf{gill-color:} black=k, brown=n, buff=b, chocolate=h, gray=g, green=r, orange=o, pink=p, purple=u, red=e, white=w, yellow=y
+	\item \textbf{stalk-shape:} enlarging=e, tapering=t
+	\item \textbf{stalk-root$^*$:} bulbous=b, club=c, cup=u, equal=e, rhizomorphs=z, rooted=r, missing=?
+	\item \textbf{stalk-surface-above-ring:} fibrous=f, scaly=y, silky=k, smooth=s
+	\item \textbf{stalk-surface-below-ring:} fibrous=f, scaly=y, silky=k, smooth=s
+	\item \textbf{stalk-color-above-ring:} brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y
+	\item \textbf{stalk-color-below-ring:} brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y
+	\item \textbf{veil-type:} partial=p, universal=u
+	\item \textbf{veil-color:} brown=n, orange=o, white=w, yellow=y
+	\item \textbf{ring-number:} none=n, one=o, two=t
+	\item \textbf{ring-type:} cobwebby=c, evanescent=e, flaring=f, large=l, none=n, pendant=p, sheathing=s, zone=z
+	\item \textbf{spore-print-color:} black=k, brown=n, buff=b, chocolate=h, green=r, orange=o, purple=u, white=w, yellow=y
+	\item \textbf{population:} abundant=a, clustered=c, numerous=n, scattered=s, several=v, solitary=y
+	\item \textbf{habitat:} grasses=g, leaves=l, meadows=m, paths=p, urban=u, waste=w, woods=d
+\end{enumerate}
+$^*$ - atrybut zawiera 2480 brakujących wartości, oznaczonych znakiem zapytania.
+\vskip 0.2in
+
+Podział klasy decyzyjnej jest następujący:
+\begin{itemize}[label=-]
+	\item grzyby jadalne: 4208 (51,8\%),
+	\item grzyby trujące: 3916 (48,2\%),
+	\item \textbf{łącznie: 8124 próbek}.
+\end{itemize}
 \section{Opis programu}
 
 \section{Wnioski}
 
-\section{Opisanie danych wykorzystanych do testowania działania metody wybranej biblioteki}
+\section{Podział pracy}
+
 
 \section{Omówienie głównych części programu/skryptu i wyników}
 
