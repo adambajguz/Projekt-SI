@@ -23,9 +23,10 @@
 \contentsline {section}{\numberline {9}Opis wykorzystanych zbior\IeC {\'o}w danych}{9}{section.9}
 \contentsline {subsection}{\numberline {9.1}Zbi\IeC {\'o}r danych Forest Fires}{10}{subsection.9.1}
 \contentsline {subsection}{\numberline {9.2}Zbi\IeC {\'o}r danych Mushroom}{10}{subsection.9.2}
-\contentsline {section}{\numberline {10}Opis programu}{11}{section.10}
-\contentsline {section}{\numberline {11}Wnioski}{11}{section.11}
-\contentsline {section}{\numberline {12}Podzia\IeC {\l } pracy}{11}{section.12}
-\contentsline {section}{\numberline {13}Om\IeC {\'o}wienie g\IeC {\l }\IeC {\'o}wnych cz\IeC {\k e}\IeC {\'s}ci programu/skryptu i wynik\IeC {\'o}w}{11}{section.13}
-\contentsline {section}{\numberline {14}Wnioski ko\IeC {\'n}cowe odno\IeC {\'s}nie biblioteki i projektu}{11}{section.14}
-\contentsline {section}{Literatura}{11}{section.14}
+\contentsline {section}{\numberline {10}Opis program\IeC {\'o}w i wynik\IeC {\'o}w}{28}{section.10}
+\contentsline {subsection}{\numberline {10.1}Zbi\IeC {\'o}r danych Forest Fires}{28}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Zbi\IeC {\'o}r danych Mushroom}{28}{subsection.10.2}
+\contentsline {section}{\numberline {11}Wnioski}{28}{section.11}
+\contentsline {section}{\numberline {12}Podzia\IeC {\l } pracy}{28}{section.12}
+\contentsline {section}{\numberline {13}Wnioski ko\IeC {\'n}cowe odno\IeC {\'s}nie biblioteki i projektu}{28}{section.13}
+\contentsline {section}{Literatura}{28}{section.13}

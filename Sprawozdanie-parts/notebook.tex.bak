@@ -1,0 +1,809 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[10pt, a4paper, landscape]{article}
+\setcounter{page}{12}
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{MushroomDT}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=0.5in,bmargin=1in,lmargin=0.5in,rmargin=0.5in}
+    
+    
+
+    \begin{document}
+
+    Załadowanie bibliotek
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
+        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
+        
+        \PY{c+c1}{\PYZsh{}Ustalenie stylu wykresów jako ggplot}
+        \PY{c+c1}{\PYZsh{} plt.style.use(\PYZsq{}ggplot\PYZsq{})}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{preprocessing}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{tree}
+        \PY{k+kn}{import} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{as} \PY{n+nn}{metrics}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
+        \PY{k+kn}{import} \PY{n+nn}{pydotplus}
+        \PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k}{import} \PY{n}{Image}  
+\end{Verbatim}
+
+
+    Wczytanie danych
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Ustalenie ścieżki do datasetu}
+        \PY{n}{filename\PYZus{}mushrooms} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./agaricus\PYZhy{}lepiota.csv}\PY{l+s+s1}{\PYZsq{}}
+        
+        \PY{c+c1}{\PYZsh{} Wczytanie datasetu jako dataframe}
+        \PY{n}{mushrooms\PYZus{}dataframe} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{filename\PYZus{}mushrooms}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{;}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Wyświetlenie dataframe}
+        \PY{n}{display}\PY{p}{(}\PY{n}{mushrooms\PYZus{}dataframe}\PY{p}{)}
+\end{Verbatim}
+
+
+    
+    
+    Zbiór danych ma 8124 wiersze i 23 kolumny (pierwsza kolumna to atrybut
+decyzyjny, a pozostałe 22 kolumny to atrybuty warunkowe). W celu
+dalszego zbadania datasetu i weryfikacji typów danych kategorycznych w
+każdej kolumnie, wypisano unikalne wartości każdej kolumny. Sprawdzono
+również, czy zbiór danych zawiera brakujące wartości lub niepotrzebne
+kolumny.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{x\PYZus{}unique} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:\PYZgt{}25\PYZcb{}}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZob{}:\PYZgt{}2\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{x\PYZus{}unique}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{x\PYZus{}unique}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny:
+                  classes:  2 ['p' 'e']
+                cap-shape:  6 ['x' 'b' 's' 'f' 'k' 'c']
+              cap-surface:  4 ['s' 'y' 'f' 'g']
+                cap-color: 10 ['n' 'y' 'w' 'g' 'e' 'p' 'b' 'u' 'c' 'r']
+                  bruises:  2 ['t' 'f']
+                     odor:  9 ['p' 'a' 'l' 'n' 'f' 'c' 'y' 's' 'm']
+          gill-attachment:  2 ['f' 'a']
+             gill-spacing:  2 ['c' 'w']
+                gill-size:  2 ['n' 'b']
+               gill-color: 12 ['k' 'n' 'g' 'p' 'w' 'h' 'u' 'e' 'b' 'r' 'y' 'o']
+              stalk-shape:  2 ['e' 't']
+               stalk-root:  5 ['e' 'c' 'b' 'r' '?']
+ stalk-surface-above-ring:  4 ['s' 'f' 'k' 'y']
+ stalk-surface-below-ring:  4 ['s' 'f' 'y' 'k']
+   stalk-color-above-ring:  9 ['w' 'g' 'p' 'n' 'b' 'e' 'o' 'c' 'y']
+   stalk-color-below-ring:  9 ['w' 'p' 'g' 'b' 'n' 'e' 'y' 'o' 'c']
+                veil-type:  1 ['p']
+               veil-color:  4 ['w' 'n' 'o' 'y']
+              ring-number:  3 ['o' 't' 'n']
+                ring-type:  5 ['p' 'e' 'l' 'f' 'n']
+        spore-print-color:  9 ['k' 'n' 'u' 'h' 'w' 'r' 'o' 'y' 'b']
+               population:  6 ['s' 'n' 'a' 'v' 'y' 'c']
+                  habitat:  7 ['u' 'g' 'm' 'd' 'p' 'w' 'l']
+
+    \end{Verbatim}
+
+    Zauważono, że spośród 22 atrybutów warunkowych, jedynie `veil-type'
+zawiera tylko jedną wartość ``p''. Zatem atrybut ten nie zapewnia żadnej
+wartości dodanej do klasyfikatora. Podjęto decyzję o usunięciu tej
+kolumny - utworzono generyczny kod usuwający wszystkie kolumny
+zawierające jedną wartość.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rozmiar mushrooms\PYZus{}dataframe przed usunięciem: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{shape}\PY{p}{)}     
+        
+        \PY{c+c1}{\PYZsh{} Usunięcie kolumn zawierających jedną wartośc}
+        \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{columns}\PY{o}{.}\PY{n}{values}\PY{p}{:}
+            \PY{n}{col\PYZus{}unique} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{p}{[}\PY{n}{col}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+            \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{col\PYZus{}unique}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Usunięto kolumnę }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{,która zawiera tylko jedną wartość: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{col}\PY{p}{,} \PY{n}{col\PYZus{}unique}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                \PY{n}{mushrooms\PYZus{}dataframe} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{n}{col}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
+                
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rozmiar mushrooms\PYZus{}dataframe po usunięciu: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Rozmiar mushrooms\_dataframe przed usunięciem:  (8124, 23)
+Usunięto kolumnę 'veil-type',która zawiera tylko jedną wartość: p
+Rozmiar mushrooms\_dataframe po usunięciu:  (8124, 22)
+
+    \end{Verbatim}
+
+    Stwierdzono również, że kolumna `stalk-root' zawiera brakujące wartości.
+Zbadano udział brakujących wartości w zbiorze - utworzono generyczny kod
+badający udziały brakująych wartości.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{x\PYZus{}unique} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+            \PY{k}{if} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{?}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{x\PYZus{}unique}\PY{p}{:}
+                \PY{n}{column} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{p}{[}\PY{n}{x}\PY{p}{]}
+                \PY{n}{column\PYZus{}count} \PY{o}{=} \PY{n}{column}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}
+                \PY{n}{column\PYZus{}value\PYZus{}count} \PY{o}{=} \PY{n}{column}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}
+        
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Liczba obiektów w zależności od kategorii i ich udział procentowy dla klasy }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}
+                \PY{n}{stat} \PY{o}{=} \PY{n}{column\PYZus{}value\PYZus{}count}\PY{o}{.}\PY{n}{to\PYZus{}frame}\PY{p}{(}\PY{p}{)}
+                \PY{n}{stat}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{percent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{100.} \PY{o}{*} \PY{n}{column\PYZus{}value\PYZus{}count} \PY{o}{/} \PY{n}{column\PYZus{}count}
+                \PY{n+nb}{print}\PY{p}{(}\PY{n}{stat}\PY{p}{)}
+        
+                \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+                \PY{n}{fig}\PY{o}{.}\PY{n}{patch}\PY{o}{.}\PY{n}{set\PYZus{}facecolor}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{xkcd:white}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{countplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{x}\PY{p}{,} \PY{n}{data}\PY{o}{=}\PY{n}{mushrooms\PYZus{}dataframe}\PY{p}{)}
+                \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Liczba obiektów w zależności od kategorii dla }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}
+                
+        \PY{c+c1}{\PYZsh{}         for p in ax.patches:}
+        \PY{c+c1}{\PYZsh{}             height = p.get\PYZus{}height()}
+        \PY{c+c1}{\PYZsh{}             ax.text(p.get\PYZus{}x()+0.25, height+ 3, \PYZsq{}n=\PYZpc{}.0f\PYZsq{}\PYZpc{}(height))}
+                
+                \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{ax}\PY{o}{.}\PY{n}{patches}\PY{p}{:}
+                    \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:.0f\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{(}\PY{l+s+si}{\PYZob{}:.2f\PYZcb{}}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{p}\PY{o}{.}\PY{n}{get\PYZus{}height}\PY{p}{(}\PY{p}{)}\PY{p}{,}
+                                                           \PY{l+m+mf}{100.} \PY{o}{*} \PY{n}{p}\PY{o}{.}\PY{n}{get\PYZus{}height}\PY{p}{(}\PY{p}{)} \PY{o}{/} \PY{n}{column\PYZus{}count}\PY{p}{)}\PY{p}{,}
+                                                           \PY{p}{(}\PY{n}{p}\PY{o}{.}\PY{n}{get\PYZus{}x}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{p}\PY{o}{.}\PY{n}{get\PYZus{}height}\PY{p}{(}\PY{p}{)}\PY{o}{/}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+                \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Liczba obiektów w zależności od kategorii i ich udział procentowy dla klasy 'stalk-root':
+
+   stalk-root    percent
+b        3776  46.479567
+?        2480  30.526834
+e        1120  13.786312
+c         556   6.843919
+r         192   2.363368
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_9_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Możliwe działania do podjęcia w pzypadku występowania brakujących danych
+to m.in. usunięcie kolumn lub wierszy zawierających brakujące dane,
+wypełninie brakujących wartości inną wartościa np. z poprzedniej lub
+następnej komórki. Stwierdzono, że udzial procentowy brakujących
+wartości (`?') dla atrybutu `stalk-root' wynosi ponad 30,5\%. Podjeto
+decyzję sporządzeniu dwóch wersji zbioru danych: z usuniętymi wierszami
+oraz z usuniętymi kolumnami zawierającymi brakujące wartości.
+
+Utworzono generyczny kod oczyszczający zbiór danych z wierszy
+zawierających brakujące wartości:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{c+c1}{\PYZsh{} Wykonanie kopii danych}
+        \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{deep}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Usunięcie wierszy}
+        \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{to\PYZus{}delete\PYZus{}count} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{x}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{?}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{if} \PY{n}{to\PYZus{}delete\PYZus{}count} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+                \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{x}\PY{p}{]} \PY{o}{!=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{?}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{W kolumnie }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ usunięto }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ wierszy zawierających brakujące wartości.}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{to\PYZus{}delete\PYZus{}count}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Podział atrybutu decyzyjnego:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{classes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+W kolumnie 'stalk-root' usunięto 2480 wierszy zawierających brakujące wartości.
+mushrooms\_dataframe\_dropped\_rows:  (5644, 22)
+
+ Podział atrybutu decyzyjnego:
+e    3488
+p    2156
+Name: classes, dtype: int64
+
+    \end{Verbatim}
+
+    Utworzono generyczny kod oczyszczający zbiór danych z kolumn
+zawierających brakujące wartości powyżej zadanego progu procentowego
+(25\%):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{} Próg procentowy usuwania kolumn z brakującymi wartościami}
+        \PY{n}{drop\PYZus{}percentage} \PY{o}{=} \PY{l+m+mf}{0.25}
+        
+        \PY{c+c1}{\PYZsh{} Wykonanie kopii danych}
+        \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{deep}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Zastąpienie znaku ? wartością nan}
+        \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{:}
+            \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{col}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{?}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{col}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nan}
+        
+        \PY{c+c1}{\PYZsh{} Usunięcie kolumn}
+        \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{columns}\PY{o}{.}\PY{n}{values}\PY{p}{:}
+            \PY{n}{no\PYZus{}rows} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{col}\PY{p}{]}\PY{o}{.}\PY{n}{isnull}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+            \PY{n}{percentage} \PY{o}{=} \PY{n}{no\PYZus{}rows} \PY{o}{/} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{if} \PY{n}{percentage} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{drop\PYZus{}percentage}\PY{p}{:}
+                \PY{k}{del} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{col}\PY{p}{]}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Kolumna }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ zawierająca }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ brakujących wartości (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{ procent zbioru) została usunięta.}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{col}\PY{p}{,} \PY{n}{no\PYZus{}rows}\PY{p}{,} \PY{n}{percentage}\PY{p}{)}\PY{p}{)}
+                
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ Podział atrybutu decyzyjnego:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{classes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Kolumna 'stalk-root' zawierająca 2480 brakujących wartości (0.3052683407188577\% procent zbioru) została usunięta.
+mushrooms\_dataframe\_dropped\_cols:  (5644, 22)
+
+ Podział atrybutu decyzyjnego:
+e    4208
+p    3916
+Name: classes, dtype: int64
+
+    \end{Verbatim}
+
+    Przed przystąpieniem do budowy drzewa decyzyjnego należy zakodować
+wartości atrybutów (kolumn). Do zakodowania wartości kategorycznych
+użyta zostanie technika kodowania etykiet, która konwertuje każdą
+wartość w kolumnie na liczbę.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kodowanie danych z usuniętymi wierszami:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{le\PYZus{}rows} \PY{o}{=} \PY{n}{preprocessing}\PY{o}{.}\PY{n}{LabelEncoder}\PY{p}{(}\PY{p}{)}
+        \PY{k}{for} \PY{n}{column} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{column}\PY{p}{]} \PY{o}{=} \PY{n}{le\PYZus{}rows}\PY{o}{.}\PY{n}{fit\PYZus{}transform}\PY{p}{(}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{column}\PY{p}{]}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny po zakodowaniu:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{x\PYZus{}unique} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:\PYZgt{}25\PYZcb{}}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZob{}:\PYZgt{}2\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{x\PYZus{}unique}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{x\PYZus{}unique}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Kodowanie danych z usuniętymi kolumnami:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}    
+        \PY{n}{le\PYZus{}cols} \PY{o}{=} \PY{n}{preprocessing}\PY{o}{.}\PY{n}{LabelEncoder}\PY{p}{(}\PY{p}{)}
+        \PY{k}{for} \PY{n}{column} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{column}\PY{p}{]} \PY{o}{=} \PY{n}{le\PYZus{}cols}\PY{o}{.}\PY{n}{fit\PYZus{}transform}\PY{p}{(}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{column}\PY{p}{]}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny po zakodowaniu:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+            \PY{n}{x\PYZus{}unique} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:\PYZgt{}25\PYZcb{}}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZob{}:\PYZgt{}2\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{x\PYZus{}unique}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{x\PYZus{}unique}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Kodowanie danych z usuniętymi wierszami:
+Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny po zakodowaniu:
+                  classes:  2 [1 0]
+                cap-shape:  6 [5 0 4 2 3 1]
+              cap-surface:  4 [2 3 0 1]
+                cap-color:  8 [4 7 6 3 2 5 0 1]
+                  bruises:  2 [1 0]
+                     odor:  7 [6 0 3 5 2 1 4]
+          gill-attachment:  2 [1 0]
+             gill-spacing:  2 [0 1]
+                gill-size:  2 [1 0]
+               gill-color:  9 [2 3 0 4 7 1 6 5 8]
+              stalk-shape:  2 [0 1]
+               stalk-root:  4 [2 1 0 3]
+ stalk-surface-above-ring:  4 [2 0 1 3]
+ stalk-surface-below-ring:  4 [2 0 3 1]
+   stalk-color-above-ring:  7 [5 2 4 3 0 1 6]
+   stalk-color-below-ring:  7 [5 4 2 0 3 1 6]
+               veil-color:  2 [0 1]
+              ring-number:  3 [1 2 0]
+                ring-type:  4 [3 0 1 2]
+        spore-print-color:  6 [1 2 4 0 3 5]
+               population:  6 [3 2 0 4 5 1]
+                  habitat:  6 [5 1 3 0 4 2]
+
+
+Kodowanie danych z usuniętymi kolumnami:
+Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny po zakodowaniu:
+                  classes:  2 [1 0]
+                cap-shape:  6 [5 0 4 2 3 1]
+              cap-surface:  4 [2 3 0 1]
+                cap-color: 10 [4 9 8 3 2 5 0 7 1 6]
+                  bruises:  2 [1 0]
+                     odor:  9 [6 0 3 5 2 1 8 7 4]
+          gill-attachment:  2 [1 0]
+             gill-spacing:  2 [0 1]
+                gill-size:  2 [1 0]
+               gill-color: 12 [ 4  5  2  7 10  3  9  1  0  8 11  6]
+              stalk-shape:  2 [0 1]
+ stalk-surface-above-ring:  4 [2 0 1 3]
+ stalk-surface-below-ring:  4 [2 0 3 1]
+   stalk-color-above-ring:  9 [7 3 6 4 0 2 5 1 8]
+   stalk-color-below-ring:  9 [7 6 3 0 4 2 8 5 1]
+               veil-color:  4 [2 0 1 3]
+              ring-number:  3 [1 2 0]
+                ring-type:  5 [4 0 2 1 3]
+        spore-print-color:  9 [2 3 6 1 7 5 4 8 0]
+               population:  6 [3 2 0 4 5 1]
+                  habitat:  7 [5 1 3 0 4 6 2]
+
+    \end{Verbatim}
+
+    Mająć zakodowane dane, należy dokonać ich podziału na atrybuty warunkowe
+(zmienna X\_*) i decyzyjne (zmienna Y\_*).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{X\PYZus{}dropped\PYZus{}rows} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{classes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{Y\PYZus{}dropped\PYZus{}rows} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{classes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        \PY{n}{X\PYZus{}dropped\PYZus{}cols} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{classes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{Y\PYZus{}dropped\PYZus{}cols} \PY{o}{=} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{classes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+
+    Kolejnym podziałem, który należy wykonać, jest podział danych na część
+treningową i testową. Założono, że rozmiar części testowej będzie
+wynosił 33\% wszystkich danych. W celu zachowania powtarzalności wyników
+parametr random\_state ustawiono na wartość 30 (ustawienie innej
+wartości bedzie powodowąło wygnerowanie innego podziału danych i innego
+drzewa decyzyjnego).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{random\PYZus{}state} \PY{o}{=} \PY{l+m+mi}{30}
+         
+         \PY{n}{X\PYZus{}train\PYZus{}dr}\PY{p}{,} \PY{n}{X\PYZus{}test\PYZus{}dr} \PY{p}{,}\PY{n}{Y\PYZus{}train\PYZus{}dr}\PY{p}{,} \PY{n}{Y\PYZus{}test\PYZus{}dr} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{X\PYZus{}dropped\PYZus{}rows}\PY{p}{,} \PY{n}{Y\PYZus{}dropped\PYZus{}rows}\PY{p}{,} \PY{n}{test\PYZus{}size} \PY{o}{=} \PY{l+m+mf}{0.33}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{n}{random\PYZus{}state}\PY{p}{)}
+         
+         \PY{n}{X\PYZus{}train\PYZus{}dc}\PY{p}{,} \PY{n}{X\PYZus{}test\PYZus{}dc} \PY{p}{,}\PY{n}{Y\PYZus{}train\PYZus{}dc}\PY{p}{,} \PY{n}{Y\PYZus{}test\PYZus{}dc} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{X\PYZus{}dropped\PYZus{}cols}\PY{p}{,} \PY{n}{Y\PYZus{}dropped\PYZus{}cols}\PY{p}{,} \PY{n}{test\PYZus{}size} \PY{o}{=} \PY{l+m+mf}{0.33}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{n}{random\PYZus{}state}\PY{p}{)}
+\end{Verbatim}
+
+
+    Utworzono funkcję sprawdzającą jakość klasyfikacji zbudowanego drzewa,
+funkcję budującą drzewo oraz funkcję sprawdzająca istotność atrybutu.
+Funkcji sprawdzająca jakość klasyfikacji zbudowanego drzewa, wypisuje
+wartości Accuracy, czyli współczynnik dokładności modelu do danych
+testowych, Precision - procent elementów będących istotnymi oraz Recall
+- procent istotnych elementów, które zostały wybrane.
+
+https://en.wikipedia.org/wiki/File:Precisionrecall.svg
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k}{def} \PY{n+nf}{test\PYZus{}tree}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{print\PYZus{}res}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{p}{:}
+             \PY{n}{clf}       \PY{o}{=} \PY{n}{clf}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
+             \PY{n}{score}     \PY{o}{=} \PY{n}{clf}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}
+             \PY{n}{precision} \PY{o}{=} \PY{n}{metrics}\PY{o}{.}\PY{n}{precision\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{clf}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{)}
+             \PY{n}{recall}    \PY{o}{=} \PY{n}{metrics}\PY{o}{.}\PY{n}{recall\PYZus{}score}\PY{p}{(}\PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{clf}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{)}
+             \PY{n}{res} \PY{o}{=} \PY{p}{(}\PY{n}{score}\PY{p}{,} \PY{n}{precision}\PY{p}{,}\PY{n}{recall}\PY{p}{)}
+             \PY{k}{if} \PY{n}{print\PYZus{}res}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Accuracy = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{ / Precision = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{ / Recall = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{res}\PY{p}{)}
+             \PY{k}{return} \PY{n}{res}
+         
+         \PY{k}{def} \PY{n+nf}{build\PYZus{}tree}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{p}{,} \PY{o}{*}\PY{o}{*}\PY{n}{kwargs}\PY{p}{)}\PY{p}{:}
+             \PY{n}{clf} \PY{o}{=} \PY{n}{tree}\PY{o}{.}\PY{n}{DecisionTreeClassifier}\PY{p}{(}\PY{n}{random\PYZus{}state}\PY{o}{=}\PY{n}{random\PYZus{}state}\PY{p}{,} \PY{o}{*}\PY{o}{*}\PY{n}{kwargs}\PY{p}{)}
+             \PY{n}{clf} \PY{o}{=} \PY{n}{clf}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{)}
+         
+             \PY{n}{dot\PYZus{}data} \PY{o}{=} \PY{n}{tree}\PY{o}{.}\PY{n}{export\PYZus{}graphviz}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{out\PYZus{}file}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}  
+                                             \PY{n}{feature\PYZus{}names}\PY{o}{=}\PY{n}{X}\PY{o}{.}\PY{n}{columns}\PY{p}{,} 
+                                             \PY{n}{class\PYZus{}names}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{p}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{e}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                             \PY{n}{filled}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{rounded}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,}  
+                                             \PY{n}{special\PYZus{}characters}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}  
+             \PY{n}{graph} \PY{o}{=} \PY{n}{pydotplus}\PY{o}{.}\PY{n}{graph\PYZus{}from\PYZus{}dot\PYZus{}data}\PY{p}{(}\PY{n}{dot\PYZus{}data}\PY{p}{)}  
+             \PY{n}{display}\PY{p}{(}\PY{n}{Image}\PY{p}{(}\PY{n}{graph}\PY{o}{.}\PY{n}{create\PYZus{}png}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             
+             \PY{n}{test\PYZus{}tree}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{Y\PYZus{}train}\PY{p}{,} \PY{n}{Y\PYZus{}test}\PY{p}{)}\PY{p}{;}
+             
+             \PY{k}{return} \PY{n}{clf}
+         
+         \PY{k}{def} \PY{n+nf}{attribute\PYZus{}importance}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{X}\PY{p}{)}\PY{p}{:}
+             \PY{n}{attrs} \PY{o}{=} \PY{n}{X}\PY{o}{.}\PY{n}{columns}\PY{o}{.}\PY{n}{values}
+             \PY{n}{attr\PYZus{}importance} \PY{o}{=} \PY{n}{clf}\PY{o}{.}\PY{n}{feature\PYZus{}importances\PYZus{}}
+             \PY{n}{sorted\PYZus{}attr\PYZus{}importance} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{argsort}\PY{p}{(}\PY{n}{attr\PYZus{}importance}\PY{p}{)}
+             \PY{n}{range\PYZus{}sorted\PYZus{}attr\PYZus{}importance} \PY{o}{=} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sorted\PYZus{}attr\PYZus{}importance}\PY{p}{)}\PY{p}{)}
+             
+             \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{)}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{barh}\PY{p}{(}\PY{n}{range\PYZus{}sorted\PYZus{}attr\PYZus{}importance}\PY{p}{,} \PY{n}{attr\PYZus{}importance}\PY{p}{[}\PY{n}{sorted\PYZus{}attr\PYZus{}importance}\PY{p}{]}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{yticks}\PY{p}{(}\PY{n}{range\PYZus{}sorted\PYZus{}attr\PYZus{}importance}\PY{p}{,} \PY{n}{attrs}\PY{p}{[}\PY{n}{sorted\PYZus{}attr\PYZus{}importance}\PY{p}{]}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Importance}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Attribute importances}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{draw}\PY{p}{(}\PY{p}{)}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    W oparciu o przygotowane dane zbudowano drzewa decyzyjne.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Dokonano klasyfikacji zbioru danych z usuniętymi wierszami, które
+  zawierały braki danych:
+\end{enumerate}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{clf} \PY{o}{=} \PY{n}{build\PYZus{}tree}\PY{p}{(}\PY{n}{X\PYZus{}dropped\PYZus{}rows}\PY{p}{,} \PY{n}{X\PYZus{}train\PYZus{}dr}\PY{p}{,} \PY{n}{X\PYZus{}test\PYZus{}dr}\PY{p}{,} \PY{n}{Y\PYZus{}train\PYZus{}dr}\PY{p}{,} \PY{n}{Y\PYZus{}test\PYZus{}dr}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.7\textwidth}}{output_23_0.png}
+    \end{center}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy = 1.000000 / Precision = 1.000000 / Recall = 1.000000
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{attribute\PYZus{}importance}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{X\PYZus{}dropped\PYZus{}rows}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.6\paperheight}}{output_24_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Wygenerowane drzewo decyzyjne posiada głębokość wynoszącą 5. Ponadto
+zauważono, że najważnijszymi atrybutami są: spore-print-color oraz
+gill-size. Mniejsze znaczenie mają atrybuty: habitat, stalk-shape oraz
+cap-surface. Pozostałe atrybuty uznano za nieznaczące.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Dokonano klasyfikacji zbioru danych z usuniętymi kolumnami, które
+  zawierały braki danych:
+\end{enumerate}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{clf} \PY{o}{=} \PY{n}{build\PYZus{}tree}\PY{p}{(}\PY{n}{X\PYZus{}dropped\PYZus{}cols}\PY{p}{,} \PY{n}{X\PYZus{}train\PYZus{}dc}\PY{p}{,} \PY{n}{X\PYZus{}test\PYZus{}dc} \PY{p}{,}\PY{n}{Y\PYZus{}train\PYZus{}dc}\PY{p}{,} \PY{n}{Y\PYZus{}test\PYZus{}dc}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_26_0.png}
+    \end{center}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy = 1.000000 / Precision = 1.000000 / Recall = 1.000000
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{attribute\PYZus{}importance}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{X\PYZus{}dropped\PYZus{}cols}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.6\paperheight}}{output_27_0.png}
+    \end{center}
+    
+    Zauważono, że drzewo wygenerowane przy użyciu danych z usuniętymi
+kolumnami jest bardziej rozbudowano niż drzewo wygenerowane przy użyciu
+danych z usuniętymi wierszami, ponieważ zostało ono skonstruowano przy
+użyciu zbioru o większej liczbie próbek. Wygenerowane drzewo decyzyjne
+posiada głębokość wynoszącą 7. Zauważono również, że najważnijszymi
+atrybutami są: gill-color, spore-print-color, population oraz gill-size.
+Mniejsze znaczenie mają atrybuty: odor, stalk-shape, habitat oraz
+stalk-color-above-ring. Pozostałe atrybuty uznano za nieznaczące.
+
+Do kolejnych eksperymentów użyto z usuniętymi kolumnami, ponieważ
+założono że większy zbiór danych może lepiej odzwierciedlać problem
+klasyfikacji grzybów.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Dokonano klasyfikacji zbioru danych z usuniętymi kolumnami ze
+  zmienionymi parametrami. Parametry dobierano tak, aby zmnijeszyć
+  wielkość drzewa decyzyjnego, jednocześnie zachowujać wysoką jakość
+  klasyfikacji. Podczas ekspoerymentów zauważono, że w przypadku
+  analizowanego zbioru dancych kryterium podziału nie ma istotnego
+  wpływu na wygląd i jakość drzewa.
+\end{enumerate}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{clf} \PY{o}{=} \PY{n}{build\PYZus{}tree}\PY{p}{(}\PY{n}{X\PYZus{}dropped\PYZus{}cols}\PY{p}{,} \PY{n}{X\PYZus{}train\PYZus{}dc}\PY{p}{,} \PY{n}{X\PYZus{}test\PYZus{}dc} \PY{p}{,}\PY{n}{Y\PYZus{}train\PYZus{}dc}\PY{p}{,} \PY{n}{Y\PYZus{}test\PYZus{}dc}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{p}{,}
+                          \PY{n}{criterion}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gini}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{max\PYZus{}depth}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{min\PYZus{}samples\PYZus{}split}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{,} \PY{n}{min\PYZus{}samples\PYZus{}leaf}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{,} \PY{n}{max\PYZus{}leaf\PYZus{}nodes}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.7\paperheight}}{output_29_0.png}
+    \end{center}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy = 0.941440 / Precision = 0.919575 / Recall = 0.959620
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{attribute\PYZus{}importance}\PY{p}{(}\PY{n}{clf}\PY{p}{,} \PY{n}{X\PYZus{}dropped\PYZus{}cols}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.65\paperheight}}{output_30_0.png}
+    \end{center}
+    
+    Ustalenie własnych parametrów drzewa decyzyjnego pozwoliło zmnijeszyć
+jego głębokość do 3, przy jednoczesnym zachowaniu dobrej jakości
+klasyfikacji. Współczynnik dokładności zmnijeszym się jedynie do około
+94\%, wartość Precission do około 91\%, a Recall do około 95\%.
+Zauważono również, że najważnijesze atrybutty, tj. gill-color,
+spore-print-color, population oraz gill-size zostały zachowane.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

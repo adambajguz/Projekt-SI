@@ -51,6 +51,8 @@ INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/booktabs/bookta
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/booktabs/booktabs.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/import/import.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/import/import.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/url/url.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/url/url.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
@@ -72,6 +74,18 @@ INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hpdfte
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/pythonhighlight/pythonhighlight.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/pythonhighlight/pythonhighlight.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/listings.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/listings.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/lstmisc.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/lstmisc.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/listings.cfg
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/listings.cfg
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
 INPUT Projekt.aux
 INPUT Projekt.aux
 OUTPUT Projekt.aux
