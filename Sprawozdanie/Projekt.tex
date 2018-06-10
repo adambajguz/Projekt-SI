@@ -301,49 +301,50 @@ W celu przetestowania działania metody drzew decyzyjnych w biblitece scikit-lea
 \subsection{Zbiór danych Forest Fires}
 Zbiór danych zawiera opisy spalony obszarów lasów, w północno-wschodniej części Portugalii. Zbiór posiada 12 atrybutów kategoryczne lub numerycznych oraz 517 obiektów (próbek) \cite{ForestFiresDS}. Definicje wartości atrybutów są następujące:
 \begin{enumerate}
-	\item \textbf{X:} x-axis spatial coordinate within the Montesinho park map: 1 to 9
-	\item \textbf{Y:} y-axis spatial coordinate within the Montesinho park map: 2 to 9
-	\item \textbf{month:} month of the year: "jan" to "dec" 
-	\item \textbf{day:} day of the week: "mon" to "sun"
-	\item \textbf{FFMC:} FFMC index from the FWI system: 18.7 to 96.20
-	\item \textbf{DMC:} DMC index from the FWI system: 1.1 to 291.3 
-	\item \textbf{DC:} DC index from the FWI system: 7.9 to 860.6 
-	\item \textbf{ISI:} ISI index from the FWI system: 0.0 to 56.10
-	\item \textbf{temp}: temperature in Celsius degrees: 2.2 to 33.30
-	\item \textbf{RH:} relative humidity in \%: 15.0 to 100
-	\item \textbf{wind:} wind speed in km/h: 0.40 to 9.40 
-	\item \textbf{rain:} outside rain in mm/m2 : 0.0 to 6.4 
-	\item \textbf{area:} the burned area of the forest (in ha): 0.00 to 1090.84 
-(this output variable is very skewed towards 0.0, thus it may make sense to model with the logarithm transform).  
+	\item \textbf{X:} współrzędna przestrzenna osi "x" na mapie parku Montesinho: od 1 do 9
+	\item \textbf{Y:} współrzędna przestrzenna osi "y" na mapie parku Montesinho: 2 do 9
+	\item \textbf{month:} miesiąc w roku: "jan" do "dec" (od stycznia do grudnia)
+	\item \textbf{day:} dzień tygodnia: "mon" do "sun" (od poniedziałku do niedzieli)
+	\item \textbf{FFMC:} Indeks FFMC (The Fine Fuel Moisture Code) z systemu FWI (Fire Weather Index): 18,7 do 96,20
+	\item \textbf{DMC:} Indeks DMC (Duff Moisture Code) z systemu FWI: 1,1 do 291,3
+	\item \textbf{DC:} Indeks DC (Drought Code) z systemu FWI: 7,9 do 860,6
+	\item \textbf{ISI:} Indeks ISI (Initial Spread Index) z systemu FWI: 0,0 do 56,10
+	\item \textbf{temp}: temperatura w stopniach Celsjusza: od 2,2 do 33,30
+	\item \textbf{RH:} wilgotność względna powietrza w \%: 15,0 do 100
+	\item \textbf{wind:} prędkość wiatru w km/h: 0,40 do 9,40
+	\item \textbf{rain:} deszcz w mm/m$^2$: 0,0 do 6,4
+	\item \textbf{area:} spalony obszar lasu w hektarach: 0,00 do 1090,84
+(this output variable is very skewed towards 0.0, thus it may make sense to model with the logarithm transform). 
 \end{enumerate}
 
 \subsection{Zbiór danych Mushroom}
 Pobrany zbiór danych Mushroom zapisano w formacie CSV wraz z nazwami nagłówków (atrybutów), zgodnie ze specyfikacją . Zbiór danych zawiera opisy hipotetycznych próbek odpowiadających 23 gatunkom grzybów z rodziny Agaricus i Lepiota. Każdy gatunek jest określony jako jadalny lub trujący. Zbiór posiada 22 kategoryczne atrybuty warunkowe, 1 atrybut decyzyjny oraz 8124 obiekty (próbki) \cite{MushroomDS}. Definicje wartości atrybutów są następujące:
-\begin{enumerate}
-	\item \textbf{classes:} edible=e, poisonous=p (atrybut decyzyjnym)
-	\item \textbf{cap-shape:} bell=b, conical=c, convex=x, flat=f, knobbed=k, sunken=s
-	\item \textbf{cap-surface:} fibrous=f, grooves=g, scaly=y, smooth=s
-	\item \textbf{cap-color:} brown=n ,buff=b, cinnamon=c, gray=g, green=r, pink=p, purple=u, red=e, white=w, yellow=y
-	\item \textbf{bruises:} bruises=t, no=f
-	\item \textbf{odor:} almond=a, anise=l, creosote=c, fishy=y, foul=f, musty=m, none=n, pungent=p, spicy=s
-	\item \textbf{gill-attachment:} attached=a, descending=d, free=f, notched=n
-	\item \textbf{gill-spacing:} close=c, crowded=w, distant=d
-	\item \textbf{gill-size:} broad=b, narrow=n
-	\item \textbf{gill-color:} black=k, brown=n, buff=b, chocolate=h, gray=g, green=r, orange=o, pink=p, purple=u, red=e, white=w, yellow=y
-	\item \textbf{stalk-shape:} enlarging=e, tapering=t
-	\item \textbf{stalk-root$^*$:} bulbous=b, club=c, cup=u, equal=e, rhizomorphs=z, rooted=r, missing=?
-	\item \textbf{stalk-surface-above-ring:} fibrous=f, scaly=y, silky=k, smooth=s
-	\item \textbf{stalk-surface-below-ring:} fibrous=f, scaly=y, silky=k, smooth=s
-	\item \textbf{stalk-color-above-ring:} brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y
-	\item \textbf{stalk-color-below-ring:} brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y
-	\item \textbf{veil-type:} partial=p, universal=u
-	\item \textbf{veil-color:} brown=n, orange=o, white=w, yellow=y
-	\item \textbf{ring-number:} none=n, one=o, two=t
-	\item \textbf{ring-type:} cobwebby=c, evanescent=e, flaring=f, large=l, none=n, pendant=p, sheathing=s, zone=z
-	\item \textbf{spore-print-color:} black=k, brown=n, buff=b, chocolate=h, green=r, orange=o, purple=u, white=w, yellow=y
-	\item \textbf{population:} abundant=a, clustered=c, numerous=n, scattered=s, several=v, solitary=y
-	\item \textbf{habitat:} grasses=g, leaves=l, meadows=m, paths=p, urban=u, waste=w, woods=d
-\end{enumerate}
+\begin{flushleft}
+	\begin{enumerate}
+		\item \textbf{cap-shape (kształt kapelusza):} bell(dzwon)=b, conical(stożek)=c, convex(wypukły)=x,flat(płaski)=f, knobbed(wybrzuszony)=k, sunken(wklęsły)=s
+		\item \textbf{cap-surface (powierzchnia kapelusza):} fibrous(włóknista)=f, grooves(bruzdowata)=g, scaly(łuskowata)=y, smooth(gładka)=s
+		\item \textbf{cap-color (kolor kapelusza):} brown(brązowy)=n, buff(płowy)=b, cinnamon(cynamonowy)=c, gray(szary)=g, green(zielony)=r, pink(różowy)=p, purple(fioletowy)=u, red(czerwony)=e,white(biały)=w, yellow(żółty)=y
+		\item \textbf{bruises (sińce):} występują=t, nie występują=f
+		\item \textbf{odor (zapach):} almond(migdałowy)=a, anise(anyżowy)=l, creosote(kreozot)=c, fishy(rybi)=y, foul(cuchnący)=f, musty(stęchły)=m, non(brak)=n, pungent(gorzki)=p, spicy(ostry)=s
+		\item \textbf{gill-attachment (przywiązanie do skrzeli):} attached(przywiązane)=a, descending(opadające)=d, free(swobodne)=f, notched(wycięte)=n
+		\item \textbf{gill-spacing (odstępy skrzeli):} close(bliskie)=c, crowded(zatłoczone)=w, distant(odległe)=d
+		\item \textbf{gill-size (wielkość skrzeli):} broad(szerokie)=b, narrow(wąskie)=n
+		\item \textbf{gill-color (kolor skrzeli):} black(czarne)=k, brown(brązowe)=n, buff(płowe)=b, chocolate(czekoladowe)=h, gray(szare)=g, green(zielone)=r, orange(pomarańczowe)=o, pink(różowe)=p, purple(fioletowe)=u, red(czerwone)=e, white(białe)=w, yellow(żółte)=y
+		\item \textbf{stalk-shape (kształt łodygi):} enlarging(rozszerzający się)=e, tapering(spiczasty)=t
+		\item \textbf{stalk-root (korzeń łodygi)$^*$:} bulbous(bulwiasty)=b, club(maczuga)=c, cup(kielich)=u, equal(jednakowy)=e, rhizomorphs(ryzomorfy?)=z, rooted(ukorzeniony)=r, missing(brak)=?
+		\item \textbf{stalk-surface-above-ring (powierzchnia łodygi powyżej pierścienia):} fibrous(włóknista)=f, scaly(łuskowata)=y, silky(jedwabista)=k, smooth(gładka)=s
+		\item \textbf{stalk-surface-below-ring (powierzchnia łodygi poniżej pierścienia):} fibrous(włóknista)=f, scaly(łuskowata)=y, silky(jedwabista)=k, smooth(gładka)=s
+		\item \textbf{stalk-color-above-ring (kolor łodygi powyżej pierścienia):} brown(brązowy)=n,buff(płowy)=b,cinnamon(cynamonowy)=c, gray(szary)=g, orange(pomarańczowy)=o, pink(różowy)=p, red(czerwony)=e, white(biały)=w, yellow(żółty)=y
+		\item \textbf{stalk-color-below-ring (kolor łodygi pod pierścieniem):} brown(brązowy)=n, buff(płowy)=b,cinnamon(cynamonowy)=c, gray(szary)=g, orange(pomarańczowy)=o, pink(różowy)=p, red(czerwony)=e, white(biały)=w, yellow(żółty)=y
+		\item \textbf{veil-type (rodzaj zasłony):} partial(częsciowa)=p, universal(powrzechna)=u
+		\item \textbf{veil-color (kolor zasłony):} brown(brązowy)=n, orange(pomarańczowy)=o, white(biały)=w, yellow(żółty)=y
+		\item \textbf{ring-number (ilość pierścieni):} none(brak)=n, one(jeden)=o, two(dwa)=t
+		\item \textbf{ring-type (typ pierścienia):} cobwebby(pajęczynowy)=c, evanescent(zanikający)=e, flaring(kloszowy)=f, large(duży)=l, none(brak)=n, pendant(wiszący)=p, sheathing(poszycie)=s,zone(pas)=z
+		\item \textbf{spore-print-color (kolor wyszycia zarodników):} black(czarny)=k, brown(brązowy)=n, buff(płowy)=b, chocolate(czekoladowy)=h, green(zielony)=r, orange(pomarańczowy)=o, purple(fioletowy)=u, white(biały)=w, yellow(żółty)=y
+		\item \textbf{population (populacja):} abundant(obfita)=a, clustered(skupiona)=c, numerous(liczna)=n, scattered(rzadka)=s, several(kilka)=v, solitary(odludna)=y
+		\item \textbf{habitat (środowisko):} grasses(trawy)=g, leaves(liście)=l, meadows(łąki)=m, paths(dróżki)=p, urban(miejskie)=u, waste(pustynne)=w, woods(las)=d 
+	\end{enumerate}
+\end{flushleft}
 $^*$ - atrybut zawiera 2480 brakujących wartości, oznaczonych znakiem zapytania.
 \vskip 0.2in
 

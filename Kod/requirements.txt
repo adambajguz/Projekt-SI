@@ -4,3 +4,4 @@ sklearn
 seaborn
 matplotlib
 jupyter
+pydotplus
