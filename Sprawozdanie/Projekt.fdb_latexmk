@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Projekt"] 1528653215 "Projekt.aux" "Projekt.bbl" "Projekt" 1528653246
+["bibtex Projekt"] 1528653215 "Projekt.aux" "Projekt.bbl" "Projekt" 1528720014
   "./elsarticle-num.bst" 1261046140 29353 cbd593ca59c003368735a9d8dbd22298 ""
   "Projekt.aux" 1528653219 6541 a8e636975e45338bfbc53ecda66125c3 ""
   "Projekt.bib" 1528549805 4339 5757c439038fe22605e3c8e0000bd18d ""
   (generated)
   "Projekt.blg"
   "Projekt.bbl"
-["pdflatex"] 1528653218 "x:/GitHub/Projekt-SI/Sprawozdanie/Projekt.tex" "Projekt.pdf" "Projekt" 1528653246
+["pdflatex"] 1528653218 "x:/GitHub/Projekt-SI/Sprawozdanie/Projekt.tex" "Projekt.pdf" "Projekt" 1528720014
   "C:/Users/Admin/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1524849176 4080155 b946cdf866692bec3f2c66560c12d9aa ""
   "C:/Users/Admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1528651968 89393 b53622560027ff69b0073d59e049630d ""
   "C:/Users/Admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc" 1254938640 2375 baa924870cfb487815765f9094cf3728 ""
@@ -102,14 +102,14 @@
   "Projekt.aux" 1528653219 6541 a8e636975e45338bfbc53ecda66125c3 ""
   "Projekt.bbl" 1528653215 4872 b5ca4e31c51df25d44481191119bdcbc "bibtex Projekt"
   "Projekt.out" 1528653219 2179 207642338d3f0a031c8a02212ed6b747 ""
-  "Projekt.tex" 1528653246 38780 7c8ac8233e79bda8568d83a14cc42527 ""
+  "Projekt.tex" 1528720013 38780 7c8ac8233e79bda8568d83a14cc42527 ""
   "Projekt.toc" 1528653219 2838 22d0b175ab49a301f45d1e463001a1ee ""
   "img/PB_logo.png" 1525337174 1800 66669ebe6d9a79b6617f5b1e367551d6 ""
   "img/structure.pdf" 1527969116 97615 394076aa303d3b7a3caf8647cc4a035e ""
-  "x:/GitHub/Projekt-SI/Sprawozdanie/Projekt.tex" 1528653246 38780 7c8ac8233e79bda8568d83a14cc42527 ""
+  "x:/GitHub/Projekt-SI/Sprawozdanie/Projekt.tex" 1528720013 38780 7c8ac8233e79bda8568d83a14cc42527 ""
   (generated)
+  "Projekt.log"
   "Projekt.pdf"
+  "Projekt.out"
   "Projekt.toc"
   "Projekt.aux"
-  "Projekt.out"
-  "Projekt.log"
