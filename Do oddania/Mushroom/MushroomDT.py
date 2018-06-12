@@ -123,7 +123,7 @@ print(mushrooms_dataframe_dropped_rows['classes'].value_counts())
 
 # Utworzono generyczny kod oczyszczający zbiór danych z kolumn zawierających brakujące wartości powyżej zadanego progu procentowego (25%):
 
-# In[20]:
+# In[7]:
 
 
 # Próg procentowy usuwania kolumn z brakującymi wartościami
@@ -156,9 +156,9 @@ print(mushrooms_dataframe_dropped_cols['classes'].value_counts())
 
 
 print('Kodowanie danych z usuniętymi wierszami:')
-labelencoder_rows = preprocessing.LabelEncoder()
+le_rows = preprocessing.LabelEncoder()
 for column in mushrooms_dataframe_dropped_rows.columns:
-    mushrooms_dataframe_dropped_rows[column] = labelencoder_rows.fit_transform(mushrooms_dataframe_dropped_rows[column])
+    mushrooms_dataframe_dropped_rows[column] = le_rows.fit_transform(mushrooms_dataframe_dropped_rows[column])
 
 print("Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny po zakodowaniu:")
 for x in mushrooms_dataframe_dropped_rows.columns:
@@ -166,9 +166,9 @@ for x in mushrooms_dataframe_dropped_rows.columns:
     print("{:>25}: {:>2} {}".format(x, x_unique.shape[0], x_unique))
 
 print('\n\nKodowanie danych z usuniętymi kolumnami:')    
-labelencoder_cols = preprocessing.LabelEncoder()
+le_cols = preprocessing.LabelEncoder()
 for column in mushrooms_dataframe_dropped_cols.columns:
-    mushrooms_dataframe_dropped_cols[column] = labelencoder_cols.fit_transform(mushrooms_dataframe_dropped_cols[column])
+    mushrooms_dataframe_dropped_cols[column] = le_cols.fit_transform(mushrooms_dataframe_dropped_cols[column])
 
 print("Liczba różnych wartości atrybutów wraz z ich wartościami dla każdej kolumny po zakodowaniu:")
 for x in mushrooms_dataframe_dropped_cols.columns:
@@ -201,8 +201,6 @@ X_train_dc, X_test_dc ,Y_train_dc, Y_test_dc = train_test_split(X_dropped_cols, 
 
 
 # Utworzono funkcję sprawdzającą jakość klasyfikacji zbudowanego drzewa, funkcję budującą drzewo oraz funkcję sprawdzająca istotność atrybutu. Funkcji sprawdzająca jakość klasyfikacji zbudowanego drzewa, wypisuje wartości Accuracy, czyli współczynnik dokładności modelu do danych testowych, Precision - procent elementów będących istotnymi oraz Recall - procent istotnych elementów, które zostały wybrane.
-# 
-# https://en.wikipedia.org/wiki/File:Precisionrecall.svg
 
 # In[11]:
 
@@ -291,7 +289,8 @@ attribute_importance(clf, X_dropped_cols)
 # In[16]:
 
 
-clf = build_tree(X_dropped_cols, X_train_dc, X_test_dc ,Y_train_dc, Y_test_dc, random_state, criterion="gini", max_depth=2, min_samples_split=200, min_samples_leaf=60, max_leaf_nodes=5)
+clf = build_tree(X_dropped_cols, X_train_dc, X_test_dc ,Y_train_dc, Y_test_dc, random_state,
+                 criterion="gini", max_depth=2, min_samples_split=200, min_samples_leaf=60, max_leaf_nodes=5)
 
 
 # In[17]:

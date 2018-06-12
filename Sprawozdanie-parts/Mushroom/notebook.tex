@@ -11,7 +11,7 @@
 
     
 \documentclass[10pt, a4paper, landscape]{article}
-\setcounter{page}{12}
+\setcounter{page}{25}
     
     
     \usepackage[T1]{fontenc}
@@ -492,7 +492,7 @@ zawierających brakujące wartości powyżej zadanego progu procentowego
             \PY{n}{percentage} \PY{o}{=} \PY{n}{no\PYZus{}rows} \PY{o}{/} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
             \PY{k}{if} \PY{n}{percentage} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{drop\PYZus{}percentage}\PY{p}{:}
                 \PY{k}{del} \PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols}\PY{p}{[}\PY{n}{col}\PY{p}{]}
-                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Kolumna }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ zawierająca }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ brakujących wartości (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{ procent zbioru) została usunięta.}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{col}\PY{p}{,} \PY{n}{no\PYZus{}rows}\PY{p}{,} \PY{n}{percentage}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Kolumna }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ zawierająca }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{ brakujących wartości (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{ zbioru) została usunięta.}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{col}\PY{p}{,} \PY{n}{no\PYZus{}rows}\PY{p}{,} \PY{n}{percentage}\PY{p}{)}\PY{p}{)}
                 
         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}cols: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{mushrooms\PYZus{}dataframe\PYZus{}dropped\PYZus{}rows}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
         

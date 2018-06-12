@@ -12,6 +12,8 @@
 
 \usepackage{enumitem}
 \usepackage{import}
+\usepackage{array}
+
 
 \usepackage[hyphens]{url}
 \usepackage[hidelinks]{hyperref}
@@ -333,10 +335,10 @@ Pobrany zbiór danych Mushroom zapisano w formacie CSV wraz z nazwami nagłówk�
 		\item \textbf{cap-color (kolor kapelusza):} brown(brązowy)=n, buff(płowy)=b, cinnamon(cynamonowy)=c, gray(szary)=g, green(zielony)=r, pink(różowy)=p, purple(fioletowy)=u, red(czerwony)=e,white(biały)=w, yellow(żółty)=y
 		\item \textbf{bruises (sińce):} występują=t, nie występują=f
 		\item \textbf{odor (zapach):} almond(migdałowy)=a, anise(anyżowy)=l, creosote(kreozot)=c, fishy(rybi)=y, foul(cuchnący)=f, musty(stęchły)=m, non(brak)=n, pungent(gorzki)=p, spicy(ostry)=s
-		\item \textbf{gill-attachment (przywiązanie do skrzeli):} attached(przywiązane)=a, descending(opadające)=d, free(swobodne)=f, notched(wycięte)=n
-		\item \textbf{gill-spacing (odstępy skrzeli):} close(bliskie)=c, crowded(zatłoczone)=w, distant(odległe)=d
-		\item \textbf{gill-size (wielkość skrzeli):} broad(szerokie)=b, narrow(wąskie)=n
-		\item \textbf{gill-color (kolor skrzeli):} black(czarne)=k, brown(brązowe)=n, buff(płowe)=b, chocolate(czekoladowe)=h, gray(szare)=g, green(zielone)=r, orange(pomarańczowe)=o, pink(różowe)=p, purple(fioletowe)=u, red(czerwone)=e, white(białe)=w, yellow(żółte)=y
+		\item \textbf{gill-attachment (przywiązanie do blaszek):} attached(przywiązane)=a, descending(opadające)=d, free(swobodne)=f, notched(wycięte)=n
+		\item \textbf{gill-spacing (odstępy blaszek):} close(bliskie)=c, crowded(zatłoczone)=w, distant(odległe)=d
+		\item \textbf{gill-size (wielkość blaszek):} broad(szerokie)=b, narrow(wąskie)=n
+		\item \textbf{gill-color (kolor blaszek):} black(czarne)=k, brown(brązowe)=n, buff(płowe)=b, chocolate(czekoladowe)=h, gray(szare)=g, green(zielone)=r, orange(pomarańczowe)=o, pink(różowe)=p, purple(fioletowe)=u, red(czerwone)=e, white(białe)=w, yellow(żółte)=y
 		\item \textbf{stalk-shape (kształt łodygi):} enlarging(rozszerzający się)=e, tapering(spiczasty)=t
 		\item \textbf{stalk-root (korzeń łodygi)$^*$:} bulbous(bulwiasty)=b, club(maczuga)=c, cup(kielich)=u, equal(jednakowy)=e, rhizomorphs(ryzomorfy?)=z, rooted(ukorzeniony)=r, missing(brak)=?
 		\item \textbf{stalk-surface-above-ring (powierzchnia łodygi powyżej pierścienia):} fibrous(włóknista)=f, scaly(łuskowata)=y, silky(jedwabista)=k, smooth(gładka)=s
@@ -347,7 +349,7 @@ Pobrany zbiór danych Mushroom zapisano w formacie CSV wraz z nazwami nagłówk�
 		\item \textbf{veil-color (kolor zasłony):} brown(brązowy)=n, orange(pomarańczowy)=o, white(biały)=w, yellow(żółty)=y
 		\item \textbf{ring-number (ilość pierścieni):} none(brak)=n, one(jeden)=o, two(dwa)=t
 		\item \textbf{ring-type (typ pierścienia):} cobwebby(pajęczynowy)=c, evanescent(zanikający)=e, flaring(kloszowy)=f, large(duży)=l, none(brak)=n, pendant(wiszący)=p, sheathing(poszycie)=s,zone(pas)=z
-		\item \textbf{spore-print-color (kolor wyszycia zarodników):} black(czarny)=k, brown(brązowy)=n, buff(płowy)=b, chocolate(czekoladowy)=h, green(zielony)=r, orange(pomarańczowy)=o, purple(fioletowy)=u, white(biały)=w, yellow(żółty)=y
+		\item \textbf{spore-print-color (kolor wysypu zarodników):} black(czarny)=k, brown(brązowy)=n, buff(płowy)=b, chocolate(czekoladowy)=h, green(zielony)=r, orange(pomarańczowy)=o, purple(fioletowy)=u, white(biały)=w, yellow(żółty)=y
 		\item \textbf{population (populacja):} abundant(obfita)=a, clustered(skupiona)=c, numerous(liczna)=n, scattered(rzadka)=s, several(kilka)=v, solitary(odludna)=y
 		\item \textbf{habitat (środowisko):} grasses(trawy)=g, leaves(liście)=l, meadows(łąki)=m, paths(dróżki)=p, urban(miejskie)=u, waste(pustynne)=w, woods(las)=d 
 	\end{enumerate}
@@ -362,18 +364,91 @@ Podział klasy decyzyjnej jest następujący:
 	\item \textbf{łącznie: 8124 próbek}.
 \end{itemize}
 \section{Opis programów i wyników}
+Obydwa programy stworzono przy użyciu języka Python, bibliteki scikit-learn i kilku innych oraz środowiska Jupyter notebook, uruchamianego za pomocą polecenia 'jupyter notebook' w konsoli.
 \subsection{Zbiór danych Forest Fires}
-\setcounter{page}{15}
+~
+\vskip 2in
 
 \subsection{Zbiór danych Mushroom}
-\setcounter{page}{27}
+~
+\newpage
+\setcounter{page}{25}
+~
 
 
 \section{Wnioski}
+\begin{itemize}
+	\item Bibliteka Scikit-learn w łatwy sposób budować i wizualizować drzewa decyzyjne.
+
+	\item Klasa DecisionTreeClassifier i DecisionTreeRegressor nie obsługuje bezpośrednio właściwości kategorycznych. Można jednak dokonać ich przekształcenia.
+
+	\item Bibliteka Scikit-learn nie realizuje przycinania drzew automatycznie. Aby uniknąć przeuczeń, należy kontrolować rozmiar drzewa parametrami, np. min\_samples\_leaf ,min\_samples\_split i max\_depth.
+
+	\item W zależności od typu zmiennej wyjściowej należy dobrać odpowiednią klasę budująca drzewo decyzyjne - DecisionTreeClassifier w przypakdu zmiennej dyskretnej, a DecisionTreeRegressor w przypadku zmiennej ciągłej.
+	
+	\item Drzewa decyzyjne to metody klasyfikacji, które są w stanie wyodrębnić proste reguły dotyczące cech danych, które są wnioskowane na podstawie danych wejściowych
+	zbiór danych. Pozwalają one na odszukanie ukrytej zależności w danych, jak i również na redukcję niepotrzebnych zmiennych.
+
+	\item Drzewa decyzyjne mogą być używane z wieloma zmiennymi.
+
+	\item Wynik klasyfikacji, tj. liczba poprawnie przewidzianych przypadków zależy od podziału zbioru na dane treningowe i testowe oraz od parametrów budowania drzewa.
+
+	\item Odpowiednie dobranie wartości parametrów drzewa, np. maximum depth pozwala zmniejszyć liczbę węzłów i liczbę podziałów przy jednoczesnym zachowaniu poprawności przewidywania. Z kolei złe ich dobranie może skutkować zmniejszeniem poprawności przewidywania przypadków w drzewie decyzyjnym.
+
+	\item Jednoczesne ustawienie kilku parametrów może pozwolić na większe zredukowanie liczby węzłów, liczby podziałów i wysokości drzewa.
+
+	\item Redukcja liczby węzłów lub głębokości drzewa decyzyjnego pozwala zaoszczędzić czas potrzeby na otrzymanie wyniku. Im głębsze drzewo, tym bardziej złożone staje się jego przewidywanie.
+
+	\item Walidacja krzyżowa może posłużyć do oszacowania błędu i uniknięcia przejęcia.
+
+	\item Przed przystąpieniem do uczenia drzewa decyzyjnego należy zbadać zbiór danych i poddać go wstępnej obróbce w celu np. usunięcia braków danych.
+
+	\item Najważnijszymi atrybutami wyodrębnionymi w zbiorze ForestFires są: month oraz temp. Oznacza to, że pożary zależą najbardziej od miesiaca i temperatury. 
+	
+	\item W zbiorze Mushroom najważniejsze atrybuty to: gill-color, spore-print-color, population oraz gill-size. Oznacza to, że klasyfikacja grzybów na trujące i jadalne zależy najbardziej od koloru blaszek, koloru wysypu zarodników rodzaju populacji i rozmiaru blaszek.
+
+\end{itemize}
+
+\setcounter{page}{40}
 
 \section{Podział pracy}
+Podział pracy w projekcie był równormierny. Adam Bajguz przygotował program do zbioru Mushroom, a Magdalena Kalisz program do zbioru ForestFires. Dokladny podział zadań pokazano w Tabeli~\hyperref[tab:podzial]{2}.
 
-\section{Wnioski końcowe odnośnie biblioteki i projektu}
+\setlength{\extrarowheight}{4pt}
+
+\begin{table}[ht]
+	\centering
+	\label{tab:podzial}
+	\caption{Podział pracy}
+	\begin{tabular}{rcc} 
+	\hline
+	\multicolumn{1}{c}{}                                              & \multicolumn{2}{c}{ \textbf{Osoba}}               \\ 
+	\cline{2-3}
+	\multicolumn{1}{c}{\textbf{Czynność lub rozdział w sprawozdaniu}} & \textbf{Adam Bajguz} & \textbf{Magdalena Kalisz}  \\ 
+	\hline
+	Przygotowanie pliku sprawozdania                                  & +                    &                            \\
+	Wstęp                                                             & +                    &                            \\
+	Drzewa decyzyjne w teorii decyzji i uczeniu maszynowym            &                      & +                          \\
+	Rodzaje drzew decyzyjnych                                         &                      & +                          \\
+	Budowa drzew decyzyjnych                                          & +                    &                            \\
+	Idea drzew decyzji                                                &                      & +                          \\
+	Cechy drzew decyzyjnych                                           & +                    & +                          \\
+	Rodzaje kryteriów podziału                                        & +                    &                            \\
+	~Algorytmy budowania drzew decyzyjnych                            &                      & +                          \\
+	Przycinanie drzew decyzyjnych                                     & +                    & +                          \\
+	Biblioteka scikit-learn: Wstęp                                    & +                    &                            \\
+	Biblioteka scikit-learn: Klasa DecisionTreeClassifier             & +                    &                            \\
+	Biblioteka scikit-learn: Klasa DecisionTreeRegressor              &                      & +                          \\
+	Opis wykorzystanych zbiorów danych: Forest Fires                  &                      & +                          \\
+	Opis wykorzystanych zbiorów danych: Mushrooms                     & +                    & \multicolumn{1}{l}{}       \\
+	Opis programów i wyników + kod: Forest Fires                      & \multicolumn{1}{l}{} & +                          \\
+	Opis programów i wyników + kod: Mushroom                          & +                    & \multicolumn{1}{l}{}       \\
+	Wnioski                                                           & +                    & +                          \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\newpage
 
 \Urlmuskip=0mu plus 1mu\relax
 \addcontentsline{toc}{section}{Literatura}
