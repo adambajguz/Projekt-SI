@@ -1,4 +1,5 @@
-# Projekt-SI
+# Projekt SI: scikit-learn-DrzewaDecyzyjne
+
 **![Sprawozdanie z projektu](/Do%20oddania/Projekt%20-%20Bajguz%20%26%20Kalisz/Sprawozdanie%20z%20projektu%2C%20Bajguz%2C%20Kalisz.pdf)**
 
 ## Podgląd sprawozdania
