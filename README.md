@@ -3,9 +3,7 @@
 
 ## Podgląd sprawozdania
 
-![Screenshot](/screenshots/01.jpg?raw=true)
-![Screenshot](/screenshots/02.jpg?raw=true)
-![Screenshot](/screenshots/04.jpg?raw=true)
-![Screenshot](/screenshots/23.jpg?raw=true)
-![Screenshot](/screenshots/35.jpg?raw=true)
-![Screenshot](/screenshots/42.jpg?raw=true)
+ = | = |  =
+------------ | ------------- | -------------
+|![Screenshot](/screenshots/01.jpg?raw=true) | ![Screenshot](/screenshots/02.jpg?raw=true) | ![Screenshot](/screenshots/04.jpg?raw=true)|
+|![Screenshot](/screenshots/23.jpg?raw=true) | ![Screenshot](/screenshots/35.jpg?raw=true) | ![Screenshot](/screenshots/42.jpg?raw=true)|
